@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Fpengguna
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Fpengguna
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Fpengguna))
@@ -41,16 +41,20 @@ Partial Class Fpengguna
         Me.MenuAksi = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Medit = New System.Windows.Forms.ToolStripMenuItem()
         Me.Mhapus = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGpengguna, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuAksi.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.Color.PaleTurquoise
+        Me.GroupBox1.BackColor = System.Drawing.Color.Cornsilk
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.Bexit)
+        Me.GroupBox1.Controls.Add(Me.Bedit)
+        Me.GroupBox1.Controls.Add(Me.Bsave)
+        Me.GroupBox1.Controls.Add(Me.Bcancel)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Cjenis)
         Me.GroupBox1.Controls.Add(Me.Label3)
@@ -63,7 +67,7 @@ Partial Class Fpengguna
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(392, 319)
+        Me.GroupBox1.Size = New System.Drawing.Size(392, 392)
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "KELOLA DATA PENGGUNA"
@@ -81,7 +85,7 @@ Partial Class Fpengguna
         'Cjenis
         '
         Me.Cjenis.FormattingEnabled = True
-        Me.Cjenis.Items.AddRange(New Object() {"Admin", "Karyawan", "Pemilik"})
+        Me.Cjenis.Items.AddRange(New Object() {"Admin", "Karyawan", "Pimpinan"})
         Me.Cjenis.Location = New System.Drawing.Point(100, 115)
         Me.Cjenis.Name = "Cjenis"
         Me.Cjenis.Size = New System.Drawing.Size(275, 23)
@@ -126,7 +130,7 @@ Partial Class Fpengguna
         'DGpengguna
         '
         Me.DGpengguna.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGpengguna.Location = New System.Drawing.Point(6, 163)
+        Me.DGpengguna.Location = New System.Drawing.Point(6, 202)
         Me.DGpengguna.Name = "DGpengguna"
         Me.DGpengguna.ReadOnly = True
         Me.DGpengguna.Size = New System.Drawing.Size(369, 150)
@@ -157,7 +161,7 @@ Partial Class Fpengguna
         Me.Bexit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bexit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bexit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bexit.Location = New System.Drawing.Point(6, 128)
+        Me.Bexit.Location = New System.Drawing.Point(300, 358)
         Me.Bexit.Name = "Bexit"
         Me.Bexit.Size = New System.Drawing.Size(75, 23)
         Me.Bexit.TabIndex = 2
@@ -166,12 +170,12 @@ Partial Class Fpengguna
         '
         'Bcancel
         '
-        Me.Bcancel.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Bcancel.BackColor = System.Drawing.Color.Tan
         Me.Bcancel.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Bcancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bcancel.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bcancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bcancel.Location = New System.Drawing.Point(6, 99)
+        Me.Bcancel.Location = New System.Drawing.Point(100, 144)
         Me.Bcancel.Name = "Bcancel"
         Me.Bcancel.Size = New System.Drawing.Size(75, 23)
         Me.Bcancel.TabIndex = 5
@@ -180,13 +184,13 @@ Partial Class Fpengguna
         '
         'Bedit
         '
-        Me.Bedit.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Bedit.BackColor = System.Drawing.Color.Tan
         Me.Bedit.Enabled = False
         Me.Bedit.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Bedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bedit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bedit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bedit.Location = New System.Drawing.Point(6, 48)
+        Me.Bedit.Location = New System.Drawing.Point(207, 144)
         Me.Bedit.Name = "Bedit"
         Me.Bedit.Size = New System.Drawing.Size(75, 23)
         Me.Bedit.TabIndex = 3
@@ -195,12 +199,12 @@ Partial Class Fpengguna
         '
         'Bsave
         '
-        Me.Bsave.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Bsave.BackColor = System.Drawing.Color.Tan
         Me.Bsave.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Bsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bsave.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bsave.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bsave.Location = New System.Drawing.Point(6, 19)
+        Me.Bsave.Location = New System.Drawing.Point(300, 144)
         Me.Bsave.Name = "Bsave"
         Me.Bsave.Size = New System.Drawing.Size(75, 23)
         Me.Bsave.TabIndex = 1
@@ -227,27 +231,22 @@ Partial Class Fpengguna
         Me.Mhapus.Size = New System.Drawing.Size(108, 22)
         Me.Mhapus.Text = "Hapus"
         '
-        'GroupBox2
+        'Label5
         '
-        Me.GroupBox2.BackColor = System.Drawing.Color.PaleTurquoise
-        Me.GroupBox2.Controls.Add(Me.Bsave)
-        Me.GroupBox2.Controls.Add(Me.Bedit)
-        Me.GroupBox2.Controls.Add(Me.Bcancel)
-        Me.GroupBox2.Controls.Add(Me.Bexit)
-        Me.GroupBox2.Location = New System.Drawing.Point(410, 12)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(92, 163)
-        Me.GroupBox2.TabIndex = 6
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "AKSI"
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(2, 180)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(114, 19)
+        Me.Label5.TabIndex = 19
+        Me.Label5.Text = "Daftar Pengguna"
         '
         'Fpengguna
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.PowderBlue
-        Me.ClientSize = New System.Drawing.Size(512, 343)
-        Me.Controls.Add(Me.GroupBox2)
+        Me.BackColor = System.Drawing.Color.Wheat
+        Me.ClientSize = New System.Drawing.Size(413, 416)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "Fpengguna"
@@ -256,7 +255,6 @@ Partial Class Fpengguna
         Me.GroupBox1.PerformLayout()
         CType(Me.DGpengguna, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuAksi.ResumeLayout(False)
-        Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -277,5 +275,5 @@ Partial Class Fpengguna
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Tnm_lengkap As System.Windows.Forms.TextBox
     Friend WithEvents Tpassword As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label5 As Label
 End Class

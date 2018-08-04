@@ -68,14 +68,6 @@
         DGpemasok.DataSource = FetchData(agen.SelectMultiple())
     End Sub
 
-    Private Sub FindData(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tcari.TextChanged
-        If Tcari.Text.Length <> 0 Then
-            'DGpemasok.DataSource = FetchData("select * from daftar_pemasok where `Nama_Pemasok` like '%" & Tcari.Text & "%'")
-        Else
-            DGpemasok.DataSource = FetchData(agen.SelectMultiple())
-        End If
-    End Sub
-
     Private Sub DGsatuan_MouseClick(sender As Object, e As MouseEventArgs) Handles DGpemasok.MouseClick
         If e.Button = MouseButtons.Right Then
             Dim pos = DGpemasok.HitTest(e.X, e.Y).RowIndex

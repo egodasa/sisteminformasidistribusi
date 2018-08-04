@@ -124,7 +124,7 @@
   <data name="Medit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxMAAAsTAQCanBgAAAcDSURBVHhe7dzNbaTHGYXRSUJa
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAcDSURBVHhe7dzNbaTHGYXRSUJa
         KgA5MgEOQpFZSUhLe68o5KZbhRlZNZz++fry1lfnABcgueCCqOddkfwEPO27y/512Y//+wzYxlv8v172
         x2W/X+YIwCa+v2zEP+YIwAZm8TsCsIH34h9zBOCEbol/zBGAE7kn/jFHAE7gkfjHHAFY2DPxjzkCsKAj
         4h9zBGAhR8Y/5gjAAl4R/5gjAMVeGf+YIwCFEvGPOQJQJBn/mCMABT4i/jFHAD7QR8Y/5gjAB2iIf+zt
@@ -160,7 +160,7 @@
   <data name="Mhapus.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAABZtJREFUeF7tnTmrXVUYhq/GIWCIojFRHJMoiJZiYeEPsBURBGs7C0EQbJynKFaJ
+        EgAACxIB0t1+/AAABZtJREFUeF7tnTmrXVUYhq/GIWCIojFRHJMoiJZiYeEPsBURBGs7C0EQbJynKFaJ
         GZwCopZOsXCqgkTFQjNYqNEkRtBKsbJxeD+uL3fId849+6y19/r2Wu8DD6QI++6znveS4Zx7zoIQQggh
         hBBCCJGPs+B5i78Uc2DnN0oug/vhn/Bf+CO8H66DYjob4QvwV2hndxw+CM+Fo2ArPAHt5lf7BjwHCp9N
         8Gvond0H8HwYmm3wJPQeANUIfCz+YeidGQ09glniU41gJbPEpyFHYPFPQe+GJ6kRLNIlPg01gu2wa3za

@@ -55,8 +55,10 @@
         Bcancel.PerformClick()
     End Sub
     Private Sub CloseForm(ByVal sender As Object, ByVal e As EventArgs) Handles Bexit.Click
-        main_form.Show()
-        Me.Close()
+        If MessageBox.Show("Apakah Anda yakin ingin KELUAR?", "Peringatan!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            main_form.Show()
+            Me.Close()
+        End If
     End Sub
     Private Sub CancelAction(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bcancel.Click
         Bedit.Enabled = False

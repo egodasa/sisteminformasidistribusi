@@ -25,10 +25,9 @@ Partial Class Fkelola_supir
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Fkelola_supir))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Tnohp = New System.Windows.Forms.TextBox()
         Me.Tnm_supir = New System.Windows.Forms.TextBox()
         Me.DGproduk = New System.Windows.Forms.DataGridView()
-        Me.Tcari = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Bsave = New System.Windows.Forms.Button()
@@ -38,32 +37,40 @@ Partial Class Fkelola_supir
         Me.MenuAksi = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Medit = New System.Windows.Forms.ToolStripMenuItem()
         Me.Mhapus = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.DaftarSatuanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Tnohp = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGproduk, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuAksi.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.Color.PaleTurquoise
+        Me.GroupBox1.BackColor = System.Drawing.Color.Cornsilk
+        Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Tnohp)
+        Me.GroupBox1.Controls.Add(Me.Bcancel)
+        Me.GroupBox1.Controls.Add(Me.Bexit)
+        Me.GroupBox1.Controls.Add(Me.Bedit)
         Me.GroupBox1.Controls.Add(Me.Tnm_supir)
+        Me.GroupBox1.Controls.Add(Me.Bsave)
         Me.GroupBox1.Controls.Add(Me.DGproduk)
-        Me.GroupBox1.Controls.Add(Me.Tcari)
-        Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 30)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(437, 250)
+        Me.GroupBox1.Size = New System.Drawing.Size(437, 316)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "KELOLA DATA SUPIR"
+        '
+        'Tnohp
+        '
+        Me.Tnohp.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tnohp.Location = New System.Drawing.Point(130, 53)
+        Me.Tnohp.Name = "Tnohp"
+        Me.Tnohp.Size = New System.Drawing.Size(289, 23)
+        Me.Tnohp.TabIndex = 14
         '
         'Tnm_supir
         '
@@ -76,29 +83,11 @@ Partial Class Fkelola_supir
         'DGproduk
         '
         Me.DGproduk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGproduk.Location = New System.Drawing.Point(16, 91)
+        Me.DGproduk.Location = New System.Drawing.Point(16, 153)
         Me.DGproduk.Name = "DGproduk"
         Me.DGproduk.ReadOnly = True
-        Me.DGproduk.Size = New System.Drawing.Size(403, 119)
+        Me.DGproduk.Size = New System.Drawing.Size(403, 128)
         Me.DGproduk.TabIndex = 12
-        '
-        'Tcari
-        '
-        Me.Tcari.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tcari.Location = New System.Drawing.Point(119, 219)
-        Me.Tcari.Name = "Tcari"
-        Me.Tcari.Size = New System.Drawing.Size(300, 23)
-        Me.Tcari.TabIndex = 11
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(13, 219)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(90, 15)
-        Me.Label6.TabIndex = 10
-        Me.Label6.Text = "Pencarian Supir"
         '
         'Label5
         '
@@ -122,12 +111,12 @@ Partial Class Fkelola_supir
         '
         'Bsave
         '
-        Me.Bsave.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Bsave.BackColor = System.Drawing.Color.Tan
         Me.Bsave.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Bsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bsave.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bsave.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bsave.Location = New System.Drawing.Point(455, 30)
+        Me.Bsave.Location = New System.Drawing.Point(344, 102)
         Me.Bsave.Name = "Bsave"
         Me.Bsave.Size = New System.Drawing.Size(75, 23)
         Me.Bsave.TabIndex = 1
@@ -141,7 +130,7 @@ Partial Class Fkelola_supir
         Me.Bexit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bexit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bexit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bexit.Location = New System.Drawing.Point(455, 257)
+        Me.Bexit.Location = New System.Drawing.Point(344, 287)
         Me.Bexit.Name = "Bexit"
         Me.Bexit.Size = New System.Drawing.Size(75, 23)
         Me.Bexit.TabIndex = 2
@@ -150,12 +139,12 @@ Partial Class Fkelola_supir
         '
         'Bcancel
         '
-        Me.Bcancel.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Bcancel.BackColor = System.Drawing.Color.Tan
         Me.Bcancel.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Bcancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bcancel.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bcancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bcancel.Location = New System.Drawing.Point(455, 121)
+        Me.Bcancel.Location = New System.Drawing.Point(130, 102)
         Me.Bcancel.Name = "Bcancel"
         Me.Bcancel.Size = New System.Drawing.Size(75, 23)
         Me.Bcancel.TabIndex = 5
@@ -164,13 +153,13 @@ Partial Class Fkelola_supir
         '
         'Bedit
         '
-        Me.Bedit.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Bedit.BackColor = System.Drawing.Color.Tan
         Me.Bedit.Enabled = False
         Me.Bedit.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Bedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bedit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bedit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bedit.Location = New System.Drawing.Point(455, 59)
+        Me.Bedit.Location = New System.Drawing.Point(236, 102)
         Me.Bedit.Name = "Bedit"
         Me.Bedit.Size = New System.Drawing.Size(75, 23)
         Me.Bedit.TabIndex = 3
@@ -197,61 +186,36 @@ Partial Class Fkelola_supir
         Me.Mhapus.Size = New System.Drawing.Size(108, 22)
         Me.Mhapus.Text = "Hapus"
         '
-        'MenuStrip1
+        'Label1
         '
-        Me.MenuStrip1.BackColor = System.Drawing.Color.Khaki
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DaftarSatuanToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(540, 24)
-        Me.MenuStrip1.TabIndex = 4
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'DaftarSatuanToolStripMenuItem
-        '
-        Me.DaftarSatuanToolStripMenuItem.Name = "DaftarSatuanToolStripMenuItem"
-        Me.DaftarSatuanToolStripMenuItem.Size = New System.Drawing.Size(90, 20)
-        Me.DaftarSatuanToolStripMenuItem.Text = "Daftar Satuan"
-        '
-        'Tnohp
-        '
-        Me.Tnohp.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tnohp.Location = New System.Drawing.Point(130, 53)
-        Me.Tnohp.Name = "Tnohp"
-        Me.Tnohp.Size = New System.Drawing.Size(289, 23)
-        Me.Tnohp.TabIndex = 14
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(12, 131)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(85, 19)
+        Me.Label1.TabIndex = 15
+        Me.Label1.Text = "Daftar Supir"
         '
         'Fkelola_supir
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.PowderBlue
-        Me.ClientSize = New System.Drawing.Size(540, 289)
-        Me.Controls.Add(Me.Bexit)
-        Me.Controls.Add(Me.Bcancel)
-        Me.Controls.Add(Me.MenuStrip1)
-        Me.Controls.Add(Me.Bedit)
-        Me.Controls.Add(Me.Bsave)
+        Me.BackColor = System.Drawing.Color.Wheat
+        Me.ClientSize = New System.Drawing.Size(456, 337)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Fkelola_supir"
         Me.Text = "Kelola Supir"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DGproduk, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuAksi.ResumeLayout(False)
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents DGproduk As System.Windows.Forms.DataGridView
-    Friend WithEvents Tcari As System.Windows.Forms.TextBox
-    Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Bsave As System.Windows.Forms.Button
@@ -262,7 +226,6 @@ Partial Class Fkelola_supir
     Friend WithEvents MenuAksi As ContextMenuStrip
     Friend WithEvents Medit As ToolStripMenuItem
     Friend WithEvents Mhapus As ToolStripMenuItem
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents DaftarSatuanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Tnohp As TextBox
+    Friend WithEvents Label1 As Label
 End Class

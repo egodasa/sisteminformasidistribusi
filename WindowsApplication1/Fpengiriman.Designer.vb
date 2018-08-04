@@ -69,10 +69,6 @@ Partial Class Fpengiriman
         Me.Ttgl_berangkat = New System.Windows.Forms.DateTimePicker()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Tketerangan = New System.Windows.Forms.TextBox()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.DaftarPembelianToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DaftarProdukToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DaftarSatuanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuAksi = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Mhapus = New System.Windows.Forms.ToolStripMenuItem()
         Me.BWsimpan = New System.ComponentModel.BackgroundWorker()
@@ -91,18 +87,17 @@ Partial Class Fpengiriman
         CType(Me.Tbiaya_truk, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
         Me.MenuAksi.SuspendLayout()
         Me.SuspendLayout()
         '
         'Bcancel
         '
-        Me.Bcancel.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Bcancel.BackColor = System.Drawing.Color.Tan
         Me.Bcancel.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Bcancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bcancel.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bcancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bcancel.Location = New System.Drawing.Point(862, 253)
+        Me.Bcancel.Location = New System.Drawing.Point(566, 240)
         Me.Bcancel.Name = "Bcancel"
         Me.Bcancel.Size = New System.Drawing.Size(98, 23)
         Me.Bcancel.TabIndex = 5
@@ -116,7 +111,7 @@ Partial Class Fpengiriman
         Me.Bexit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bexit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bexit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bexit.Location = New System.Drawing.Point(720, 323)
+        Me.Bexit.Location = New System.Drawing.Point(626, 323)
         Me.Bexit.Name = "Bexit"
         Me.Bexit.Size = New System.Drawing.Size(240, 23)
         Me.Bexit.TabIndex = 2
@@ -125,7 +120,7 @@ Partial Class Fpengiriman
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.Color.PaleTurquoise
+        Me.GroupBox1.BackColor = System.Drawing.Color.Cornsilk
         Me.GroupBox1.Controls.Add(Me.Bexit)
         Me.GroupBox1.Controls.Add(Me.Ckota)
         Me.GroupBox1.Controls.Add(Me.Bcancel)
@@ -145,9 +140,9 @@ Partial Class Fpengiriman
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.Tketerangan)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 28)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(969, 361)
+        Me.GroupBox1.Size = New System.Drawing.Size(879, 361)
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Data Pengiriman Semen"
@@ -159,16 +154,16 @@ Partial Class Fpengiriman
         Me.Ckota.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ckota.FormattingEnabled = True
         Me.Ckota.Items.AddRange(New Object() {"q"})
-        Me.Ckota.Location = New System.Drawing.Point(657, 41)
+        Me.Ckota.Location = New System.Drawing.Point(608, 41)
         Me.Ckota.Name = "Ckota"
-        Me.Ckota.Size = New System.Drawing.Size(303, 23)
+        Me.Ckota.Size = New System.Drawing.Size(185, 23)
         Me.Ckota.TabIndex = 26
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(654, 19)
+        Me.Label7.Location = New System.Drawing.Point(605, 23)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(70, 15)
         Me.Label7.TabIndex = 27
@@ -201,7 +196,7 @@ Partial Class Fpengiriman
         Me.GroupBox7.Controls.Add(Me.Tsisa)
         Me.GroupBox7.Location = New System.Drawing.Point(21, 253)
         Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(630, 93)
+        Me.GroupBox7.Size = New System.Drawing.Size(536, 93)
         Me.GroupBox7.TabIndex = 48
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Data Biaya Perjalanan"
@@ -210,7 +205,7 @@ Partial Class Fpengiriman
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(326, 56)
+        Me.Label15.Location = New System.Drawing.Point(281, 54)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(65, 15)
         Me.Label15.TabIndex = 34
@@ -218,10 +213,10 @@ Partial Class Fpengiriman
         '
         'Tuang_jalan
         '
-        Me.Tuang_jalan.Location = New System.Drawing.Point(434, 56)
+        Me.Tuang_jalan.Location = New System.Drawing.Point(389, 54)
         Me.Tuang_jalan.Maximum = New Decimal(New Integer() {1000000000, 0, 0, 0})
         Me.Tuang_jalan.Name = "Tuang_jalan"
-        Me.Tuang_jalan.Size = New System.Drawing.Size(170, 23)
+        Me.Tuang_jalan.Size = New System.Drawing.Size(137, 23)
         Me.Tuang_jalan.TabIndex = 35
         Me.Tuang_jalan.ThousandsSeparator = True
         '
@@ -229,7 +224,7 @@ Partial Class Fpengiriman
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(326, 27)
+        Me.Label4.Location = New System.Drawing.Point(281, 25)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(77, 15)
         Me.Label4.TabIndex = 32
@@ -237,10 +232,10 @@ Partial Class Fpengiriman
         '
         'Ttotal_ongkos
         '
-        Me.Ttotal_ongkos.Location = New System.Drawing.Point(434, 27)
+        Me.Ttotal_ongkos.Location = New System.Drawing.Point(389, 25)
         Me.Ttotal_ongkos.Maximum = New Decimal(New Integer() {1000000000, 0, 0, 0})
         Me.Ttotal_ongkos.Name = "Ttotal_ongkos"
-        Me.Ttotal_ongkos.Size = New System.Drawing.Size(170, 23)
+        Me.Ttotal_ongkos.Size = New System.Drawing.Size(137, 23)
         Me.Ttotal_ongkos.TabIndex = 33
         Me.Ttotal_ongkos.ThousandsSeparator = True
         '
@@ -259,7 +254,7 @@ Partial Class Fpengiriman
         Me.Tsisa.Location = New System.Drawing.Point(105, 27)
         Me.Tsisa.Maximum = New Decimal(New Integer() {1000000000, 0, 0, 0})
         Me.Tsisa.Name = "Tsisa"
-        Me.Tsisa.Size = New System.Drawing.Size(182, 23)
+        Me.Tsisa.Size = New System.Drawing.Size(145, 23)
         Me.Tsisa.TabIndex = 31
         Me.Tsisa.ThousandsSeparator = True
         '
@@ -269,7 +264,7 @@ Partial Class Fpengiriman
         Me.GroupBox6.Controls.Add(Me.Tton)
         Me.GroupBox6.Controls.Add(Me.Tsak)
         Me.GroupBox6.Controls.Add(Me.Label3)
-        Me.GroupBox6.Location = New System.Drawing.Point(657, 70)
+        Me.GroupBox6.Location = New System.Drawing.Point(563, 70)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Size = New System.Drawing.Size(303, 81)
         Me.GroupBox6.TabIndex = 47
@@ -317,12 +312,12 @@ Partial Class Fpengiriman
         '
         'Badd
         '
-        Me.Badd.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Badd.BackColor = System.Drawing.Color.Tan
         Me.Badd.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Badd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Badd.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Badd.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Badd.Location = New System.Drawing.Point(660, 253)
+        Me.Badd.Location = New System.Drawing.Point(781, 240)
         Me.Badd.Name = "Badd"
         Me.Badd.Size = New System.Drawing.Size(85, 23)
         Me.Badd.TabIndex = 6
@@ -341,17 +336,17 @@ Partial Class Fpengiriman
         Me.GroupBox5.Controls.Add(Me.Label8)
         Me.GroupBox5.Location = New System.Drawing.Point(22, 158)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(626, 89)
+        Me.GroupBox5.Size = New System.Drawing.Size(535, 89)
         Me.GroupBox5.TabIndex = 46
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Data Tarif"
         '
         'Ttotal_tarif
         '
-        Me.Ttotal_tarif.Location = New System.Drawing.Point(433, 24)
+        Me.Ttotal_tarif.Location = New System.Drawing.Point(388, 24)
         Me.Ttotal_tarif.Maximum = New Decimal(New Integer() {1000000000, 0, 0, 0})
         Me.Ttotal_tarif.Name = "Ttotal_tarif"
-        Me.Ttotal_tarif.Size = New System.Drawing.Size(170, 23)
+        Me.Ttotal_tarif.Size = New System.Drawing.Size(137, 23)
         Me.Ttotal_tarif.TabIndex = 47
         Me.Ttotal_tarif.ThousandsSeparator = True
         '
@@ -359,7 +354,7 @@ Partial Class Fpengiriman
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(325, 24)
+        Me.Label17.Location = New System.Drawing.Point(280, 24)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(98, 15)
         Me.Label17.TabIndex = 46
@@ -367,10 +362,10 @@ Partial Class Fpengiriman
         '
         'Ttotal_biaya_truk
         '
-        Me.Ttotal_biaya_truk.Location = New System.Drawing.Point(433, 53)
+        Me.Ttotal_biaya_truk.Location = New System.Drawing.Point(388, 53)
         Me.Ttotal_biaya_truk.Maximum = New Decimal(New Integer() {1000000000, 0, 0, 0})
         Me.Ttotal_biaya_truk.Name = "Ttotal_biaya_truk"
-        Me.Ttotal_biaya_truk.Size = New System.Drawing.Size(170, 23)
+        Me.Ttotal_biaya_truk.Size = New System.Drawing.Size(137, 23)
         Me.Ttotal_biaya_truk.TabIndex = 45
         Me.Ttotal_biaya_truk.ThousandsSeparator = True
         '
@@ -378,7 +373,7 @@ Partial Class Fpengiriman
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(325, 51)
+        Me.Label18.Location = New System.Drawing.Point(280, 51)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(95, 15)
         Me.Label18.TabIndex = 44
@@ -389,7 +384,7 @@ Partial Class Fpengiriman
         Me.Ttarif.Location = New System.Drawing.Point(109, 22)
         Me.Ttarif.Maximum = New Decimal(New Integer() {1000000000, 0, 0, 0})
         Me.Ttarif.Name = "Ttarif"
-        Me.Ttarif.Size = New System.Drawing.Size(178, 23)
+        Me.Ttarif.Size = New System.Drawing.Size(141, 23)
         Me.Ttarif.TabIndex = 43
         Me.Ttarif.ThousandsSeparator = True
         '
@@ -408,7 +403,7 @@ Partial Class Fpengiriman
         Me.Tbiaya_truk.Location = New System.Drawing.Point(109, 51)
         Me.Tbiaya_truk.Maximum = New Decimal(New Integer() {1000000000, 0, 0, 0})
         Me.Tbiaya_truk.Name = "Tbiaya_truk"
-        Me.Tbiaya_truk.Size = New System.Drawing.Size(178, 23)
+        Me.Tbiaya_truk.Size = New System.Drawing.Size(141, 23)
         Me.Tbiaya_truk.TabIndex = 29
         Me.Tbiaya_truk.ThousandsSeparator = True
         '
@@ -430,7 +425,7 @@ Partial Class Fpengiriman
         Me.GroupBox4.Controls.Add(Me.Cagen)
         Me.GroupBox4.Location = New System.Drawing.Point(22, 70)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(302, 79)
+        Me.GroupBox4.Size = New System.Drawing.Size(265, 79)
         Me.GroupBox4.TabIndex = 45
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Data Truk"
@@ -443,7 +438,7 @@ Partial Class Fpengiriman
         Me.Ctruk.Items.AddRange(New Object() {"1"})
         Me.Ctruk.Location = New System.Drawing.Point(87, 19)
         Me.Ctruk.Name = "Ctruk"
-        Me.Ctruk.Size = New System.Drawing.Size(200, 23)
+        Me.Ctruk.Size = New System.Drawing.Size(163, 23)
         Me.Ctruk.TabIndex = 19
         '
         'Label1
@@ -474,7 +469,7 @@ Partial Class Fpengiriman
         Me.Cagen.Items.AddRange(New Object() {"1"})
         Me.Cagen.Location = New System.Drawing.Point(87, 48)
         Me.Cagen.Name = "Cagen"
-        Me.Cagen.Size = New System.Drawing.Size(200, 23)
+        Me.Cagen.Size = New System.Drawing.Size(163, 23)
         Me.Cagen.TabIndex = 41
         '
         'GroupBox3
@@ -483,9 +478,9 @@ Partial Class Fpengiriman
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Controls.Add(Me.Csupir)
         Me.GroupBox3.Controls.Add(Me.Label12)
-        Me.GroupBox3.Location = New System.Drawing.Point(338, 70)
+        Me.GroupBox3.Location = New System.Drawing.Point(293, 70)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(307, 79)
+        Me.GroupBox3.Size = New System.Drawing.Size(264, 79)
         Me.GroupBox3.TabIndex = 44
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Data Supir"
@@ -494,7 +489,7 @@ Partial Class Fpengiriman
         '
         Me.Tnohp.Location = New System.Drawing.Point(87, 49)
         Me.Tnohp.Name = "Tnohp"
-        Me.Tnohp.Size = New System.Drawing.Size(200, 23)
+        Me.Tnohp.Size = New System.Drawing.Size(167, 23)
         Me.Tnohp.TabIndex = 39
         '
         'Label2
@@ -515,7 +510,7 @@ Partial Class Fpengiriman
         Me.Csupir.Items.AddRange(New Object() {"1"})
         Me.Csupir.Location = New System.Drawing.Point(87, 19)
         Me.Csupir.Name = "Csupir"
-        Me.Csupir.Size = New System.Drawing.Size(200, 23)
+        Me.Csupir.Size = New System.Drawing.Size(167, 23)
         Me.Csupir.TabIndex = 17
         '
         'Label12
@@ -532,7 +527,7 @@ Partial Class Fpengiriman
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(442, 19)
+        Me.Label11.Location = New System.Drawing.Point(389, 19)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(92, 15)
         Me.Label11.TabIndex = 37
@@ -542,7 +537,7 @@ Partial Class Fpengiriman
         '
         Me.Ttgl_sampai.CustomFormat = "dd MMMM yyyy"
         Me.Ttgl_sampai.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.Ttgl_sampai.Location = New System.Drawing.Point(445, 41)
+        Me.Ttgl_sampai.Location = New System.Drawing.Point(392, 41)
         Me.Ttgl_sampai.Name = "Ttgl_sampai"
         Me.Ttgl_sampai.Size = New System.Drawing.Size(200, 23)
         Me.Ttgl_sampai.TabIndex = 36
@@ -551,7 +546,7 @@ Partial Class Fpengiriman
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(226, 19)
+        Me.Label10.Location = New System.Drawing.Point(192, 19)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(105, 15)
         Me.Label10.TabIndex = 35
@@ -561,7 +556,7 @@ Partial Class Fpengiriman
         '
         Me.Ttgl_berangkat.CustomFormat = "dd MMMM yyyy"
         Me.Ttgl_berangkat.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.Ttgl_berangkat.Location = New System.Drawing.Point(225, 41)
+        Me.Ttgl_berangkat.Location = New System.Drawing.Point(195, 41)
         Me.Ttgl_berangkat.Name = "Ttgl_berangkat"
         Me.Ttgl_berangkat.Size = New System.Drawing.Size(176, 23)
         Me.Ttgl_berangkat.TabIndex = 34
@@ -570,7 +565,7 @@ Partial Class Fpengiriman
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(657, 167)
+        Me.Label9.Location = New System.Drawing.Point(563, 168)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(67, 15)
         Me.Label9.TabIndex = 33
@@ -578,39 +573,11 @@ Partial Class Fpengiriman
         '
         'Tketerangan
         '
-        Me.Tketerangan.Location = New System.Drawing.Point(660, 185)
+        Me.Tketerangan.Location = New System.Drawing.Point(566, 185)
         Me.Tketerangan.Multiline = True
         Me.Tketerangan.Name = "Tketerangan"
         Me.Tketerangan.Size = New System.Drawing.Size(300, 49)
         Me.Tketerangan.TabIndex = 32
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.BackColor = System.Drawing.Color.Khaki
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DaftarPembelianToolStripMenuItem, Me.DaftarProdukToolStripMenuItem, Me.DaftarSatuanToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1002, 24)
-        Me.MenuStrip1.TabIndex = 8
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'DaftarPembelianToolStripMenuItem
-        '
-        Me.DaftarPembelianToolStripMenuItem.Name = "DaftarPembelianToolStripMenuItem"
-        Me.DaftarPembelianToolStripMenuItem.Size = New System.Drawing.Size(110, 20)
-        Me.DaftarPembelianToolStripMenuItem.Text = "Daftar Pembelian"
-        '
-        'DaftarProdukToolStripMenuItem
-        '
-        Me.DaftarProdukToolStripMenuItem.Name = "DaftarProdukToolStripMenuItem"
-        Me.DaftarProdukToolStripMenuItem.Size = New System.Drawing.Size(92, 20)
-        Me.DaftarProdukToolStripMenuItem.Text = "Daftar Produk"
-        '
-        'DaftarSatuanToolStripMenuItem
-        '
-        Me.DaftarSatuanToolStripMenuItem.Name = "DaftarSatuanToolStripMenuItem"
-        Me.DaftarSatuanToolStripMenuItem.Size = New System.Drawing.Size(90, 20)
-        Me.DaftarSatuanToolStripMenuItem.Text = "Daftar Satuan"
         '
         'MenuAksi
         '
@@ -629,13 +596,11 @@ Partial Class Fpengiriman
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.PowderBlue
-        Me.ClientSize = New System.Drawing.Size(1002, 395)
+        Me.BackColor = System.Drawing.Color.Wheat
+        Me.ClientSize = New System.Drawing.Size(901, 384)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Fpengiriman"
         Me.Text = "Daftar Pengiriman Semen"
         Me.GroupBox1.ResumeLayout(False)
@@ -659,11 +624,8 @@ Partial Class Fpengiriman
         Me.GroupBox4.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         Me.MenuAksi.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Bcancel As Button
@@ -678,16 +640,12 @@ Partial Class Fpengiriman
     Friend WithEvents Ctruk As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Csupir As ComboBox
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents DaftarPembelianToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MenuAksi As ContextMenuStrip
     Friend WithEvents Mhapus As ToolStripMenuItem
     Friend WithEvents Label7 As Label
     Friend WithEvents Ckota As ComboBox
     Friend WithEvents Tbiaya_truk As NumericUpDown
     Friend WithEvents Label8 As Label
-    Friend WithEvents DaftarProdukToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents DaftarSatuanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label9 As Label
     Friend WithEvents Tketerangan As TextBox
     Friend WithEvents Tsisa As NumericUpDown

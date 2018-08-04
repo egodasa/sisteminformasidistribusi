@@ -60,4 +60,15 @@
     Private Sub Mhapus_Click(sender As Object, e As EventArgs) Handles Mhapus.Click
         DeletePengiriman(current_id)
     End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        If MessageBox.Show("Apakah Anda yakin ingin KELUAR?", "Peringatan!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            If jenis_pengguna = "Admin" Then
+                main_form.Show()
+            Else
+                Flogin.Show()
+            End If
+        End If
+        Me.Close()
+    End Sub
 End Class

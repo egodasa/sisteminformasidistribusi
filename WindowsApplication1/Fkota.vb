@@ -71,4 +71,11 @@
     Private Sub Mhapus_Click(sender As Object, e As EventArgs) Handles Mhapus.Click
         DeleteData(current_id)
     End Sub
+
+    Private Sub Bexit_Click(sender As Object, e As EventArgs) Handles Bexit.Click
+        If MessageBox.Show("Apakah Anda yakin ingin KELUAR?", "Peringatan!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            main_form.Show()
+            Me.Close()
+        End If
+    End Sub
 End Class

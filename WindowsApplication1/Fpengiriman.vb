@@ -22,6 +22,7 @@
             New SqlHelper.SqlManipulation("id_supir", Csupir.SelectedValue),
             New SqlHelper.SqlManipulation("id_truk", Ctruk.SelectedValue),
             New SqlHelper.SqlManipulation("id_kota", Ckota.SelectedValue),
+            New SqlHelper.SqlManipulation("tarif_ptsp", Ttarif.Value),
             New SqlHelper.SqlManipulation("vol_ton", Tton.Value),
             New SqlHelper.SqlManipulation("vol_sak", Tsak.Value),
             New SqlHelper.SqlManipulation("tarif_truk", Tbiaya_truk.Value),
@@ -83,6 +84,7 @@
             Ckota.SelectedValue = id_kota.Rows(0).Item("id")
         End If
         SetPengirimanValue()
+        MessageBox.Show(Fpengiriman_daftar.pengiriman.Insert())
         RunQuery(Fpengiriman_daftar.pengiriman.Insert())
         Fpengiriman_daftar.DGpengiriman.DataSource = FetchData(Fpengiriman_daftar.pengiriman.SelectMultiple())
         Call successMessage()
@@ -117,30 +119,36 @@
         Me.Close()
     End Sub
 
-    Private Sub DaftarPembelianToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DaftarPembelianToolStripMenuItem.Click
+    Private Sub DaftarPembelianToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Fpengiriman_daftar.ShowDialog()
     End Sub
-    Private Sub DaftarProdukToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DaftarProdukToolStripMenuItem.Click
+    Private Sub DaftarProdukToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Fkelola_supir.ShowDialog()
     End Sub
 
-    Private Sub DaftarSatuanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DaftarSatuanToolStripMenuItem.Click
+    Private Sub DaftarSatuanToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Fkota.ShowDialog()
     End Sub
 
-    Private Sub GetDetailSupir(sender As Object, e As EventArgs) Handles Csupir.Leave
-        Dim data As DataTable = FetchData(supir.SelectAll("id_supir", "=", Csupir.SelectedValue))
-        Tnohp.Text = data.Rows(0).Item("no_hp")
+    Private Sub GetDetailSupir(ByVal sender As Object, ByVal e As EventArgs) Handles Csupir.Leave
+        If Csupir.SelectedIndex <> -1 Then
+            Dim data As DataTable = FetchData(supir.SelectAll("id_supir", "=", Csupir.SelectedValue))
+            Tnohp.Text = data.Rows(0).Item("no_hp")
+        End If
     End Sub
 
-    Private Sub GetTrukDetail(sender As Object, e As EventArgs) Handles Ctruk.Leave
-        Dim data As DataTable = FetchData(truk.SelectAll("id_truk", "=", Ctruk.SelectedValue))
-        Cagen.SelectedValue = data.Rows(0).Item("id_agen")
+    Private Sub GetTrukDetail(ByVal sender As Object, ByVal e As EventArgs) Handles Ctruk.Leave
+        If Ctruk.SelectedIndex <> -1 Then
+            Dim data As DataTable = FetchData(truk.SelectAll("id_truk", "=", Ctruk.SelectedValue))
+            Cagen.SelectedValue = data.Rows(0).Item("id_agen")
+        End If
     End Sub
 
-    Private Sub GetKotaDetail(sender As Object, e As EventArgs) Handles Ckota.Leave
-        Dim data As DataTable = FetchData(kota.SelectAll("id_kota", "=", Ckota.SelectedValue))
-        Ttarif.Value = data.Rows(0).Item("tarif")
+    Private Sub GetKotaDetail(ByVal sender As Object, ByVal e As EventArgs) Handles Ckota.Leave
+        If Ckota.SelectedIndex <> -1 Then
+            Dim data As DataTable = FetchData(kota.SelectAll("id_kota", "=", Ckota.SelectedValue))
+            Ttarif.Value = data.Rows(0).Item("tarif")
+        End If
     End Sub
 
     Private Sub HitungTotalOngkos(sender As Object, e As KeyEventArgs) Handles Tbiaya_truk.ValueChanged
@@ -242,4 +250,5 @@
     Private Sub Tbiaya_truk_Leave(sender As Object, e As EventArgs) Handles Tbiaya_truk.Leave
         Ttotal_biaya_truk.Value = Tton.Value * Tbiaya_truk.Value
     End Sub
+
 End Class

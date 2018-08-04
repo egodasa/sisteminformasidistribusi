@@ -48,7 +48,7 @@ Partial Class Fpengaturan
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.Color.PaleTurquoise
+        Me.GroupBox1.BackColor = System.Drawing.Color.Cornsilk
         Me.GroupBox1.Controls.Add(Me.Tpassword)
         Me.GroupBox1.Controls.Add(Me.Bsave)
         Me.GroupBox1.Controls.Add(Me.Tusername)
@@ -128,7 +128,7 @@ Partial Class Fpengaturan
         '
         'GroupBox3
         '
-        Me.GroupBox3.BackColor = System.Drawing.Color.PaleTurquoise
+        Me.GroupBox3.BackColor = System.Drawing.Color.Cornsilk
         Me.GroupBox3.Controls.Add(Me.Button1)
         Me.GroupBox3.Controls.Add(Me.Button2)
         Me.GroupBox3.Controls.Add(Me.Label1)
@@ -228,7 +228,7 @@ Partial Class Fpengaturan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.LightBlue
+        Me.BackColor = System.Drawing.Color.Wheat
         Me.ClientSize = New System.Drawing.Size(451, 325)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.Bexit)

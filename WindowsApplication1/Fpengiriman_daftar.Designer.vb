@@ -30,14 +30,16 @@ Partial Class Fpengiriman_daftar
         Me.Badd = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.MenuAksi = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.Mhapus = New System.Windows.Forms.ToolStripMenuItem()
         Me.Medit = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Mhapus = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.DGpengiriman, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuAksi.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
         '
+        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(662, 50)
         Me.Label1.Name = "Label1"
@@ -47,6 +49,7 @@ Partial Class Fpengiriman_daftar
         '
         'Tcari
         '
+        Me.Tcari.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Tcari.Location = New System.Drawing.Point(723, 50)
         Me.Tcari.Name = "Tcari"
         Me.Tcari.Size = New System.Drawing.Size(167, 20)
@@ -56,6 +59,9 @@ Partial Class Fpengiriman_daftar
         '
         Me.DGpengiriman.AllowUserToAddRows = False
         Me.DGpengiriman.AllowUserToDeleteRows = False
+        Me.DGpengiriman.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DGpengiriman.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGpengiriman.Location = New System.Drawing.Point(12, 76)
         Me.DGpengiriman.Name = "DGpengiriman"
@@ -65,7 +71,7 @@ Partial Class Fpengiriman_daftar
         '
         'Badd
         '
-        Me.Badd.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Badd.BackColor = System.Drawing.Color.Tan
         Me.Badd.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Badd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Badd.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -91,28 +97,44 @@ Partial Class Fpengiriman_daftar
         '
         Me.MenuAksi.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Medit, Me.Mhapus})
         Me.MenuAksi.Name = "MenuAksi"
-        Me.MenuAksi.Size = New System.Drawing.Size(181, 70)
-        '
-        'Mhapus
-        '
-        Me.Mhapus.Image = CType(resources.GetObject("Mhapus.Image"), System.Drawing.Image)
-        Me.Mhapus.Name = "Mhapus"
-        Me.Mhapus.Size = New System.Drawing.Size(180, 22)
-        Me.Mhapus.Text = "Hapus"
+        Me.MenuAksi.Size = New System.Drawing.Size(109, 48)
         '
         'Medit
         '
         Me.Medit.Image = CType(resources.GetObject("Medit.Image"), System.Drawing.Image)
         Me.Medit.Name = "Medit"
-        Me.Medit.Size = New System.Drawing.Size(180, 22)
+        Me.Medit.Size = New System.Drawing.Size(108, 22)
         Me.Medit.Text = "Edit"
         '
-        'Fdaftar_pengiriman
+        'Mhapus
+        '
+        Me.Mhapus.Image = CType(resources.GetObject("Mhapus.Image"), System.Drawing.Image)
+        Me.Mhapus.Name = "Mhapus"
+        Me.Mhapus.Size = New System.Drawing.Size(108, 22)
+        Me.Mhapus.Text = "Hapus"
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.DarkGray
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button1.Location = New System.Drawing.Point(777, 396)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(113, 23)
+        Me.Button1.TabIndex = 9
+        Me.Button1.Text = "KELUAR"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Fpengiriman_daftar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.PowderBlue
-        Me.ClientSize = New System.Drawing.Size(902, 398)
+        Me.BackColor = System.Drawing.Color.Wheat
+        Me.ClientSize = New System.Drawing.Size(902, 431)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Tcari)
         Me.Controls.Add(Me.Label1)
@@ -120,7 +142,7 @@ Partial Class Fpengiriman_daftar
         Me.Controls.Add(Me.DGpengiriman)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "Fdaftar_pengiriman"
+        Me.Name = "Fpengiriman_daftar"
         Me.Text = "Daftar Pengiriman"
         CType(Me.DGpengiriman, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuAksi.ResumeLayout(False)
@@ -136,4 +158,5 @@ Partial Class Fpengiriman_daftar
     Friend WithEvents MenuAksi As ContextMenuStrip
     Friend WithEvents Medit As ToolStripMenuItem
     Friend WithEvents Mhapus As ToolStripMenuItem
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

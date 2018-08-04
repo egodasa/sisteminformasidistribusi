@@ -8,11 +8,6 @@
             }
     End Sub
     Private Sub LoadForm(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        If jenis_pengguna <> "Admin" Then
-            MenuStrip1.Visible = False
-        Else
-            MenuStrip1.Visible = True
-        End If
         Call SetKoneksi()
         supir.table = "tbl_supir"
         supir.view = Nothing
@@ -37,6 +32,7 @@
     End Sub
     Private Sub CloseForm(sender As Object, e As EventArgs) Handles Bexit.Click
         If MessageBox.Show("Apakah Anda yakin ingin KELUAR?", "Peringatan!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            main_form.Show()
             Me.Close()
         End If
     End Sub
@@ -68,14 +64,6 @@
         DGproduk.DataSource = FetchData(supir.SelectMultiple())
     End Sub
 
-    Private Sub FindData(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tcari.TextChanged
-        If Tcari.Text.Length <> 0 Then
-            DGproduk.DataSource = FetchData(supir.SelectMultiple("nm_supir", "like", "'%" & Tcari.Text & "%'"))
-        Else
-            DGproduk.DataSource = FetchData(supir.SelectMultiple())
-        End If
-    End Sub
-
     Private Sub DGsatuan_MouseClick(sender As Object, e As MouseEventArgs) Handles DGproduk.MouseClick
         If e.Button = MouseButtons.Right Then
             Dim pos = DGproduk.HitTest(e.X, e.Y).RowIndex
@@ -93,7 +81,7 @@
         DeleteData(current_id)
     End Sub
 
-    Private Sub DaftarSatuanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DaftarSatuanToolStripMenuItem.Click
+    Private Sub DaftarSatuanToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Fkota.ShowDialog()
     End Sub
 End Class

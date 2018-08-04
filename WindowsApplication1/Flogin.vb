@@ -27,7 +27,15 @@ Public Class Flogin
         Me.Close()
     End Sub
 
-    Private Sub LogoPictureBox_Click(sender As Object, e As EventArgs) Handles LogoPictureBox.Click
+    Private Sub LogoPictureBox_Click(ByVal sender As Object, ByVal e As EventArgs)
+
+    End Sub
+
+    Private Sub Label1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label1.Click
         Fpengaturan.ShowDialog()
+    End Sub
+
+    Private Sub Flogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

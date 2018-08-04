@@ -34,13 +34,12 @@ Partial Class Fagen
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Tnm_agen = New System.Windows.Forms.TextBox()
         Me.DGpemasok = New System.Windows.Forms.DataGridView()
-        Me.Tcari = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.MenuAksi = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Medit = New System.Windows.Forms.ToolStripMenuItem()
         Me.Mhapus = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGpemasok, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuAksi.SuspendLayout()
@@ -48,12 +47,12 @@ Partial Class Fagen
         '
         'Bcancel
         '
-        Me.Bcancel.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Bcancel.BackColor = System.Drawing.Color.Tan
         Me.Bcancel.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Bcancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bcancel.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bcancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bcancel.Location = New System.Drawing.Point(572, 117)
+        Me.Bcancel.Location = New System.Drawing.Point(205, 105)
         Me.Bcancel.Name = "Bcancel"
         Me.Bcancel.Size = New System.Drawing.Size(75, 23)
         Me.Bcancel.TabIndex = 5
@@ -67,7 +66,7 @@ Partial Class Fagen
         Me.Bexit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bexit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bexit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bexit.Location = New System.Drawing.Point(572, 217)
+        Me.Bexit.Location = New System.Drawing.Point(471, 306)
         Me.Bexit.Name = "Bexit"
         Me.Bexit.Size = New System.Drawing.Size(75, 23)
         Me.Bexit.TabIndex = 2
@@ -76,13 +75,13 @@ Partial Class Fagen
         '
         'Bedit
         '
-        Me.Bedit.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Bedit.BackColor = System.Drawing.Color.Tan
         Me.Bedit.Enabled = False
         Me.Bedit.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Bedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bedit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bedit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bedit.Location = New System.Drawing.Point(572, 41)
+        Me.Bedit.Location = New System.Drawing.Point(337, 105)
         Me.Bedit.Name = "Bedit"
         Me.Bedit.Size = New System.Drawing.Size(75, 23)
         Me.Bedit.TabIndex = 3
@@ -91,12 +90,12 @@ Partial Class Fagen
         '
         'Bsave
         '
-        Me.Bsave.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Bsave.BackColor = System.Drawing.Color.Tan
         Me.Bsave.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Bsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bsave.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bsave.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bsave.Location = New System.Drawing.Point(572, 12)
+        Me.Bsave.Location = New System.Drawing.Point(471, 105)
         Me.Bsave.Name = "Bsave"
         Me.Bsave.Size = New System.Drawing.Size(75, 23)
         Me.Bsave.TabIndex = 1
@@ -105,20 +104,23 @@ Partial Class Fagen
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.Color.PaleTurquoise
+        Me.GroupBox1.BackColor = System.Drawing.Color.Cornsilk
+        Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Talamat)
+        Me.GroupBox1.Controls.Add(Me.Bexit)
         Me.GroupBox1.Controls.Add(Me.Ttelp)
+        Me.GroupBox1.Controls.Add(Me.Bcancel)
         Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.Bedit)
         Me.GroupBox1.Controls.Add(Me.Tnm_agen)
         Me.GroupBox1.Controls.Add(Me.DGpemasok)
-        Me.GroupBox1.Controls.Add(Me.Tcari)
-        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.Bsave)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(554, 238)
+        Me.GroupBox1.Size = New System.Drawing.Size(554, 337)
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "KELOLA DATA AGEN"
@@ -161,29 +163,11 @@ Partial Class Fagen
         'DGpemasok
         '
         Me.DGpemasok.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGpemasok.Location = New System.Drawing.Point(11, 105)
+        Me.DGpemasok.Location = New System.Drawing.Point(11, 162)
         Me.DGpemasok.Name = "DGpemasok"
         Me.DGpemasok.ReadOnly = True
-        Me.DGpemasok.Size = New System.Drawing.Size(535, 93)
+        Me.DGpemasok.Size = New System.Drawing.Size(535, 138)
         Me.DGpemasok.TabIndex = 12
-        '
-        'Tcari
-        '
-        Me.Tcari.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tcari.Location = New System.Drawing.Point(125, 204)
-        Me.Tcari.Name = "Tcari"
-        Me.Tcari.Size = New System.Drawing.Size(421, 23)
-        Me.Tcari.TabIndex = 11
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(8, 204)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(90, 15)
-        Me.Label6.TabIndex = 10
-        Me.Label6.Text = "Pencarian Agen"
         '
         'Label5
         '
@@ -225,17 +209,23 @@ Partial Class Fagen
         Me.Mhapus.Size = New System.Drawing.Size(108, 22)
         Me.Mhapus.Text = "Hapus"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(8, 140)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(115, 19)
+        Me.Label1.TabIndex = 19
+        Me.Label1.Text = "Daftar Agen Truk"
+        '
         'Fagen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.PowderBlue
-        Me.ClientSize = New System.Drawing.Size(654, 252)
-        Me.Controls.Add(Me.Bexit)
-        Me.Controls.Add(Me.Bcancel)
-        Me.Controls.Add(Me.Bedit)
+        Me.BackColor = System.Drawing.Color.Wheat
+        Me.ClientSize = New System.Drawing.Size(573, 353)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.Bsave)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Fagen"
@@ -254,8 +244,6 @@ Partial Class Fagen
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Tnm_agen As TextBox
     Friend WithEvents DGpemasok As DataGridView
-    Friend WithEvents Tcari As TextBox
-    Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Talamat As TextBox
@@ -264,4 +252,5 @@ Partial Class Fagen
     Friend WithEvents MenuAksi As ContextMenuStrip
     Friend WithEvents Medit As ToolStripMenuItem
     Friend WithEvents Mhapus As ToolStripMenuItem
+    Friend WithEvents Label1 As Label
 End Class

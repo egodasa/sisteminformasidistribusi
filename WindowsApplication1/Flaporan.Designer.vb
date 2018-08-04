@@ -25,22 +25,24 @@ Partial Class Flaporan
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.penjualan_awal = New System.Windows.Forms.DateTimePicker()
+        Me.Tharian = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.pembelian_awal = New System.Windows.Forms.DateTimePicker()
+        Me.Tbulanan = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.laba_awal = New System.Windows.Forms.DateTimePicker()
-        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Ttahunan = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Takhir = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Tawal = New System.Windows.Forms.DateTimePicker()
+        Me.Bexit = New System.Windows.Forms.Button()
+        Me.BWlaporan = New System.ComponentModel.BackgroundWorker()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -49,10 +51,10 @@ Partial Class Flaporan
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.Color.PowderBlue
+        Me.GroupBox1.BackColor = System.Drawing.Color.Cornsilk
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Button3)
-        Me.GroupBox1.Controls.Add(Me.penjualan_awal)
+        Me.GroupBox1.Controls.Add(Me.Tharian)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
@@ -60,6 +62,7 @@ Partial Class Flaporan
         Me.GroupBox1.TabIndex = 16
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Laporan Pengiriman Harian"
+        Me.GroupBox1.Visible = False
         '
         'Label2
         '
@@ -72,8 +75,11 @@ Partial Class Flaporan
         '
         'Button3
         '
-        Me.Button3.BackColor = System.Drawing.Color.MintCream
+        Me.Button3.BackColor = System.Drawing.Color.Tan
+        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.Color.White
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button3.Location = New System.Drawing.Point(306, 15)
         Me.Button3.Name = "Button3"
@@ -83,21 +89,21 @@ Partial Class Flaporan
         Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button3.UseVisualStyleBackColor = False
         '
-        'penjualan_awal
+        'Tharian
         '
-        Me.penjualan_awal.CustomFormat = "dd MMMM yyyy"
-        Me.penjualan_awal.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.penjualan_awal.Location = New System.Drawing.Point(100, 19)
-        Me.penjualan_awal.Name = "penjualan_awal"
-        Me.penjualan_awal.Size = New System.Drawing.Size(200, 23)
-        Me.penjualan_awal.TabIndex = 0
+        Me.Tharian.CustomFormat = "dd MMMM yyyy"
+        Me.Tharian.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.Tharian.Location = New System.Drawing.Point(100, 19)
+        Me.Tharian.Name = "Tharian"
+        Me.Tharian.Size = New System.Drawing.Size(200, 23)
+        Me.Tharian.TabIndex = 0
         '
         'GroupBox2
         '
-        Me.GroupBox2.BackColor = System.Drawing.Color.PowderBlue
+        Me.GroupBox2.BackColor = System.Drawing.Color.Cornsilk
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.Button1)
-        Me.GroupBox2.Controls.Add(Me.pembelian_awal)
+        Me.GroupBox2.Controls.Add(Me.Tbulanan)
         Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(12, 69)
         Me.GroupBox2.Name = "GroupBox2"
@@ -105,6 +111,7 @@ Partial Class Flaporan
         Me.GroupBox2.TabIndex = 23
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Laporan Pengiriman Bulanan"
+        Me.GroupBox2.Visible = False
         '
         'Label5
         '
@@ -117,8 +124,11 @@ Partial Class Flaporan
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.MintCream
+        Me.Button1.BackColor = System.Drawing.Color.Tan
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button1.Location = New System.Drawing.Point(306, 18)
         Me.Button1.Name = "Button1"
@@ -128,21 +138,21 @@ Partial Class Flaporan
         Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'pembelian_awal
+        'Tbulanan
         '
-        Me.pembelian_awal.CustomFormat = "dd MMMM yyyy"
-        Me.pembelian_awal.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.pembelian_awal.Location = New System.Drawing.Point(100, 19)
-        Me.pembelian_awal.Name = "pembelian_awal"
-        Me.pembelian_awal.Size = New System.Drawing.Size(200, 23)
-        Me.pembelian_awal.TabIndex = 0
+        Me.Tbulanan.CustomFormat = "MMMM yyyy"
+        Me.Tbulanan.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.Tbulanan.Location = New System.Drawing.Point(100, 19)
+        Me.Tbulanan.Name = "Tbulanan"
+        Me.Tbulanan.Size = New System.Drawing.Size(200, 23)
+        Me.Tbulanan.TabIndex = 0
         '
         'GroupBox3
         '
-        Me.GroupBox3.BackColor = System.Drawing.Color.PowderBlue
+        Me.GroupBox3.BackColor = System.Drawing.Color.Cornsilk
         Me.GroupBox3.Controls.Add(Me.Label7)
         Me.GroupBox3.Controls.Add(Me.Button2)
-        Me.GroupBox3.Controls.Add(Me.laba_awal)
+        Me.GroupBox3.Controls.Add(Me.Ttahunan)
         Me.GroupBox3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(11, 129)
         Me.GroupBox3.Name = "GroupBox3"
@@ -150,6 +160,7 @@ Partial Class Flaporan
         Me.GroupBox3.TabIndex = 24
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Laporan Pengiriman Tahunan"
+        Me.GroupBox3.Visible = False
         '
         'Label7
         '
@@ -162,8 +173,11 @@ Partial Class Flaporan
         '
         'Button2
         '
-        Me.Button2.BackColor = System.Drawing.Color.MintCream
+        Me.Button2.BackColor = System.Drawing.Color.Tan
+        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.White
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button2.Location = New System.Drawing.Point(307, 18)
         Me.Button2.Name = "Button2"
@@ -173,36 +187,23 @@ Partial Class Flaporan
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button2.UseVisualStyleBackColor = False
         '
-        'laba_awal
+        'Ttahunan
         '
-        Me.laba_awal.CustomFormat = "dd MMMM yyyy"
-        Me.laba_awal.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.laba_awal.Location = New System.Drawing.Point(100, 19)
-        Me.laba_awal.Name = "laba_awal"
-        Me.laba_awal.Size = New System.Drawing.Size(200, 23)
-        Me.laba_awal.TabIndex = 0
-        '
-        'Button5
-        '
-        Me.Button5.BackColor = System.Drawing.Color.MintCream
-        Me.Button5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.Location = New System.Drawing.Point(312, 291)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(89, 39)
-        Me.Button5.TabIndex = 24
-        Me.Button5.Text = "Keluar"
-        Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button5.UseVisualStyleBackColor = False
+        Me.Ttahunan.CustomFormat = "yyyy"
+        Me.Ttahunan.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.Ttahunan.Location = New System.Drawing.Point(100, 19)
+        Me.Ttahunan.Name = "Ttahunan"
+        Me.Ttahunan.Size = New System.Drawing.Size(200, 23)
+        Me.Ttahunan.TabIndex = 0
         '
         'GroupBox4
         '
-        Me.GroupBox4.BackColor = System.Drawing.Color.PowderBlue
+        Me.GroupBox4.BackColor = System.Drawing.Color.Cornsilk
         Me.GroupBox4.Controls.Add(Me.Label4)
-        Me.GroupBox4.Controls.Add(Me.DateTimePicker2)
+        Me.GroupBox4.Controls.Add(Me.Takhir)
         Me.GroupBox4.Controls.Add(Me.Label3)
         Me.GroupBox4.Controls.Add(Me.Button4)
-        Me.GroupBox4.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox4.Controls.Add(Me.Tawal)
         Me.GroupBox4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.Location = New System.Drawing.Point(11, 186)
         Me.GroupBox4.Name = "GroupBox4"
@@ -210,6 +211,25 @@ Partial Class Flaporan
         Me.GroupBox4.TabIndex = 25
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Laporan Pengiriman Rentang Waktu Tertentu"
+        Me.GroupBox4.Visible = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(195, 40)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(22, 15)
+        Me.Label4.TabIndex = 23
+        Me.Label4.Text = "---"
+        '
+        'Takhir
+        '
+        Me.Takhir.CustomFormat = "dd MMMM yyyy"
+        Me.Takhir.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.Takhir.Location = New System.Drawing.Point(232, 37)
+        Me.Takhir.Name = "Takhir"
+        Me.Takhir.Size = New System.Drawing.Size(149, 23)
+        Me.Takhir.TabIndex = 22
         '
         'Label3
         '
@@ -222,8 +242,11 @@ Partial Class Flaporan
         '
         'Button4
         '
-        Me.Button4.BackColor = System.Drawing.Color.MintCream
+        Me.Button4.BackColor = System.Drawing.Color.Tan
+        Me.Button4.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.ForeColor = System.Drawing.Color.White
         Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button4.Location = New System.Drawing.Point(307, 66)
         Me.Button4.Name = "Button4"
@@ -233,47 +256,58 @@ Partial Class Flaporan
         Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button4.UseVisualStyleBackColor = False
         '
-        'DateTimePicker1
+        'Tawal
         '
-        Me.DateTimePicker1.CustomFormat = "dd MMMM yyyy"
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(11, 37)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(176, 23)
-        Me.DateTimePicker1.TabIndex = 0
+        Me.Tawal.CustomFormat = "dd MMMM yyyy"
+        Me.Tawal.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.Tawal.Location = New System.Drawing.Point(11, 37)
+        Me.Tawal.Name = "Tawal"
+        Me.Tawal.Size = New System.Drawing.Size(168, 23)
+        Me.Tawal.TabIndex = 0
         '
-        'DateTimePicker2
+        'Bexit
         '
-        Me.DateTimePicker2.CustomFormat = "dd MMMM yyyy"
-        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker2.Location = New System.Drawing.Point(232, 37)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(149, 23)
-        Me.DateTimePicker2.TabIndex = 22
+        Me.Bexit.BackColor = System.Drawing.Color.Gray
+        Me.Bexit.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Bexit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Bexit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bexit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Bexit.Location = New System.Drawing.Point(326, 302)
+        Me.Bexit.Name = "Bexit"
+        Me.Bexit.Size = New System.Drawing.Size(75, 23)
+        Me.Bexit.TabIndex = 24
+        Me.Bexit.Text = "KELUAR"
+        Me.Bexit.UseVisualStyleBackColor = False
+        Me.Bexit.Visible = False
         '
-        'Label4
+        'BWlaporan
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(200, 40)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(22, 15)
-        Me.Label4.TabIndex = 23
-        Me.Label4.Text = "---"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(106, 300)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(192, 25)
+        Me.Label1.TabIndex = 24
+        Me.Label1.Text = "Memuat Laporan..."
         '
         'Flaporan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.PaleTurquoise
+        Me.BackColor = System.Drawing.Color.Wheat
         Me.ClientSize = New System.Drawing.Size(406, 337)
+        Me.Controls.Add(Me.Bexit)
         Me.Controls.Add(Me.GroupBox4)
-        Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.GroupBox3)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "Flaporan"
-        Me.Text = "Menu Laporan"
+        Me.Text = "Laporan Pengiriman"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -283,25 +317,28 @@ Partial Class Flaporan
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents penjualan_awal As DateTimePicker
+    Friend WithEvents Tharian As DateTimePicker
     Friend WithEvents Label2 As Label
     Friend WithEvents Button3 As Button
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Button1 As Button
-    Friend WithEvents pembelian_awal As DateTimePicker
+    Friend WithEvents Tbulanan As DateTimePicker
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Button2 As Button
-    Friend WithEvents laba_awal As DateTimePicker
-    Friend WithEvents Button5 As Button
+    Friend WithEvents Ttahunan As DateTimePicker
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents DateTimePicker2 As DateTimePicker
+    Friend WithEvents Takhir As DateTimePicker
     Friend WithEvents Label3 As Label
     Friend WithEvents Button4 As Button
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents Tawal As DateTimePicker
+    Friend WithEvents Bexit As Button
+    Friend WithEvents BWlaporan As System.ComponentModel.BackgroundWorker
+    Friend WithEvents Label1 As Label
 End Class
