@@ -8,9 +8,9 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{54E52264-F716-4290-940D-1E15954EC0DF}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>PutraJaya.My.MyApplication</StartupObject>
-    <RootNamespace>PutraJaya</RootNamespace>
-    <AssemblyName>PutraJaya</AssemblyName>
+    <StartupObject>SastraJayaPratama.My.MyApplication</StartupObject>
+    <RootNamespace>SastraJayaPratama</RootNamespace>
+    <AssemblyName>SastraJayaPratama</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
@@ -40,7 +40,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>PutraJaya.xml</DocumentationFile>
+    <DocumentationFile>SastraJayaPratama.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -51,7 +51,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>PutraJaya.xml</DocumentationFile>
+    <DocumentationFile>SastraJayaPratama.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -82,7 +82,7 @@
   <PropertyGroup />
   <PropertyGroup />
   <PropertyGroup>
-    <ApplicationIcon>assets\laporan_c9wLWA.ico</ApplicationIcon>
+    <ApplicationIcon>icons8_truck_48_Gre_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -320,28 +320,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="assets\edit-solid.png" />
-    <Content Include="assets\icons8-account-96.png" />
-    <Content Include="assets\icons8-close-window-96.png" />
-    <Content Include="assets\icons8-edit-file-96.png" />
-    <Content Include="assets\icons8-print-48.png" />
-    <Content Include="assets\icons8-save-all-96.png" />
-    <Content Include="assets\icons8-scale-96.png" />
-    <Content Include="assets\icons8-sell-stock-96.png" />
-    <Content Include="assets\icons8-shutdown-96.png" />
-    <Content Include="assets\icons8-supplier-96.png" />
-    <Content Include="assets\icons8-user-96.png" />
-    <Content Include="assets\if_cross-24_103181.png" />
-    <Content Include="assets\laporan_c9wLWA.ico" />
-    <Content Include="assets\loading.gif" />
-    <Content Include="assets\pemasok.png" />
-    <Content Include="assets\pembelian.png" />
-    <Content Include="assets\penjualan.png" />
-    <Content Include="assets\produk.png" />
-    <Content Include="assets\supplier.png" />
     <Content Include="database\dbputra_jaya.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="icons8_truck_48_Gre_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

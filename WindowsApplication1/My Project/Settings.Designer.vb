@@ -104,7 +104,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("dbputra_jaya")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("dbsastra_jaya_pratama")>  _
         Public Property db_database() As String
             Get
                 Return CType(Me("db_database"),String)
@@ -124,9 +124,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.PutraJaya.My.MySettings
+        Friend ReadOnly Property Settings() As Global.SastraJayaPratama.My.MySettings
             Get
-                Return Global.PutraJaya.My.MySettings.Default
+                Return Global.SastraJayaPratama.My.MySettings.Default
             End Get
         End Property
     End Module

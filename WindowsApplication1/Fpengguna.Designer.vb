@@ -249,6 +249,7 @@ Partial Class Fpengguna
         Me.ClientSize = New System.Drawing.Size(413, 416)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Fpengguna"
         Me.Text = "Kelola Pengguna"
         Me.GroupBox1.ResumeLayout(False)

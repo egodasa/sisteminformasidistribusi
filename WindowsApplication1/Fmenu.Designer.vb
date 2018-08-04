@@ -183,8 +183,8 @@ Partial Class Fmenu
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(386, 57)
         Me.Label2.TabIndex = 14
-        Me.Label2.Text = "Jln. Raya Indarung Padang Besi No. 04, Kec. Lubuk Kilangan" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Padang, Sumatera Bara" & _
-            "t" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "HP. 081278004888 e-mail : ptsastrajaya@gmail.com"
+        Me.Label2.Text = "Jln. Raya Indarung Padang Besi No. 04, Kec. Lubuk Kilangan" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Padang, Sumatera Bara" &
+    "t" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "HP. 081278004888 e-mail : ptsastrajaya@gmail.com"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Fmenu

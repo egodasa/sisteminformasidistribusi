@@ -2,8 +2,8 @@ DROP TABLE IF EXISTS `tbl_agen_truk`;
 CREATE TABLE `tbl_agen_truk` (
   `id_agen` int(11) NOT NULL AUTO_INCREMENT,
   `nm_agen` varchar(100) NOT NULL,
-  `no_telpon` varchar(14) DEFAULT NULL,
-  `alamat` varchar(255) DEFAULT NULL,
+  `no_telpon` varchar(14) NOT NULL DEFAULT '0',
+  `alamat` varchar(255) NOT NULL DEFAULT '-',
   PRIMARY KEY (`id_agen`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

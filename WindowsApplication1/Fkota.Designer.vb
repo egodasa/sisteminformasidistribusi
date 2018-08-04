@@ -25,19 +25,19 @@ Partial Class Fkota
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Fkota))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Ttarif = New System.Windows.Forms.NumericUpDown()
+        Me.Bedit = New System.Windows.Forms.Button()
+        Me.Bsave = New System.Windows.Forms.Button()
+        Me.Bexit = New System.Windows.Forms.Button()
+        Me.Bcancel = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DGsatuan = New System.Windows.Forms.DataGridView()
         Me.Tnm_kota = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Bexit = New System.Windows.Forms.Button()
-        Me.Bcancel = New System.Windows.Forms.Button()
-        Me.Bedit = New System.Windows.Forms.Button()
-        Me.Bsave = New System.Windows.Forms.Button()
         Me.MenuAksi = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Medit = New System.Windows.Forms.ToolStripMenuItem()
         Me.Mhapus = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Ttarif, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGsatuan, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,6 +65,16 @@ Partial Class Fkota
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "KELOLA DATA KOTA"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(6, 153)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(113, 19)
+        Me.Label3.TabIndex = 15
+        Me.Label3.Text = "Daftar Tarif Kota"
+        '
         'Ttarif
         '
         Me.Ttarif.Increment = New Decimal(New Integer() {10000, 0, 0, 0})
@@ -74,6 +84,63 @@ Partial Class Fkota
         Me.Ttarif.Size = New System.Drawing.Size(209, 23)
         Me.Ttarif.TabIndex = 14
         Me.Ttarif.ThousandsSeparator = True
+        '
+        'Bedit
+        '
+        Me.Bedit.BackColor = System.Drawing.Color.Tan
+        Me.Bedit.Enabled = False
+        Me.Bedit.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Bedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Bedit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bedit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Bedit.Location = New System.Drawing.Point(123, 105)
+        Me.Bedit.Name = "Bedit"
+        Me.Bedit.Size = New System.Drawing.Size(75, 23)
+        Me.Bedit.TabIndex = 3
+        Me.Bedit.Text = "UBAH"
+        Me.Bedit.UseVisualStyleBackColor = False
+        '
+        'Bsave
+        '
+        Me.Bsave.BackColor = System.Drawing.Color.Tan
+        Me.Bsave.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Bsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Bsave.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bsave.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Bsave.Location = New System.Drawing.Point(225, 105)
+        Me.Bsave.Name = "Bsave"
+        Me.Bsave.Size = New System.Drawing.Size(75, 23)
+        Me.Bsave.TabIndex = 1
+        Me.Bsave.Text = "SIMPAN"
+        Me.Bsave.UseVisualStyleBackColor = False
+        '
+        'Bexit
+        '
+        Me.Bexit.BackColor = System.Drawing.Color.Gray
+        Me.Bexit.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Bexit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Bexit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bexit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Bexit.Location = New System.Drawing.Point(225, 321)
+        Me.Bexit.Name = "Bexit"
+        Me.Bexit.Size = New System.Drawing.Size(75, 23)
+        Me.Bexit.TabIndex = 2
+        Me.Bexit.Text = "KELUAR"
+        Me.Bexit.UseVisualStyleBackColor = False
+        '
+        'Bcancel
+        '
+        Me.Bcancel.BackColor = System.Drawing.Color.Tan
+        Me.Bcancel.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Bcancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Bcancel.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bcancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Bcancel.Location = New System.Drawing.Point(10, 105)
+        Me.Bcancel.Name = "Bcancel"
+        Me.Bcancel.Size = New System.Drawing.Size(75, 23)
+        Me.Bcancel.TabIndex = 5
+        Me.Bcancel.Text = "BATAL"
+        Me.Bcancel.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -112,63 +179,6 @@ Partial Class Fkota
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Nama Kota"
         '
-        'Bexit
-        '
-        Me.Bexit.BackColor = System.Drawing.Color.Gray
-        Me.Bexit.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Bexit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Bexit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bexit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bexit.Location = New System.Drawing.Point(225, 321)
-        Me.Bexit.Name = "Bexit"
-        Me.Bexit.Size = New System.Drawing.Size(75, 23)
-        Me.Bexit.TabIndex = 2
-        Me.Bexit.Text = "KELUAR"
-        Me.Bexit.UseVisualStyleBackColor = False
-        '
-        'Bcancel
-        '
-        Me.Bcancel.BackColor = System.Drawing.Color.Tan
-        Me.Bcancel.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Bcancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Bcancel.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bcancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bcancel.Location = New System.Drawing.Point(10, 105)
-        Me.Bcancel.Name = "Bcancel"
-        Me.Bcancel.Size = New System.Drawing.Size(75, 23)
-        Me.Bcancel.TabIndex = 5
-        Me.Bcancel.Text = "BATAL"
-        Me.Bcancel.UseVisualStyleBackColor = False
-        '
-        'Bedit
-        '
-        Me.Bedit.BackColor = System.Drawing.Color.Tan
-        Me.Bedit.Enabled = False
-        Me.Bedit.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Bedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Bedit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bedit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bedit.Location = New System.Drawing.Point(123, 105)
-        Me.Bedit.Name = "Bedit"
-        Me.Bedit.Size = New System.Drawing.Size(75, 23)
-        Me.Bedit.TabIndex = 3
-        Me.Bedit.Text = "UBAH"
-        Me.Bedit.UseVisualStyleBackColor = False
-        '
-        'Bsave
-        '
-        Me.Bsave.BackColor = System.Drawing.Color.Tan
-        Me.Bsave.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Bsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Bsave.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bsave.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bsave.Location = New System.Drawing.Point(225, 105)
-        Me.Bsave.Name = "Bsave"
-        Me.Bsave.Size = New System.Drawing.Size(75, 23)
-        Me.Bsave.TabIndex = 1
-        Me.Bsave.Text = "SIMPAN"
-        Me.Bsave.UseVisualStyleBackColor = False
-        '
         'MenuAksi
         '
         Me.MenuAksi.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Medit, Me.Mhapus})
@@ -188,16 +198,6 @@ Partial Class Fkota
         Me.Mhapus.Name = "Mhapus"
         Me.Mhapus.Size = New System.Drawing.Size(108, 22)
         Me.Mhapus.Text = "Hapus"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(6, 153)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(113, 19)
-        Me.Label3.TabIndex = 15
-        Me.Label3.Text = "Daftar Tarif Kota"
         '
         'Fkota
         '

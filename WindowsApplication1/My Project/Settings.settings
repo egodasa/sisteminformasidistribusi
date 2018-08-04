@@ -15,7 +15,7 @@
       <Value Profile="(Default)">C:\LaporanPenjualan</Value>
     </Setting>
     <Setting Name="db_database" Type="System.String" Scope="User">
-      <Value Profile="(Default)">dbputra_jaya</Value>
+      <Value Profile="(Default)">dbsastra_jaya_pratama</Value>
     </Setting>
   </Settings>
 </SettingsFile>
