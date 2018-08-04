@@ -71,4 +71,13 @@
         End If
         Me.Close()
     End Sub
+
+    Private Sub Tcari_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Tcari.KeyUp
+        If e.KeyValue = Keys.Enter Then
+            DGpengiriman.DataSource = FetchData(pengiriman.SelectMultiple() & " WHERE nomor_do LIKE '%" & Tcari.Text & "%' OR nm_supir LIKE '%" & Tcari.Text & "%'")
+        End If
+        If Tcari.TextLength = 0 Then
+            DGpengiriman.DataSource = FetchData(pengiriman.SelectMultiple())
+        End If
+    End Sub
 End Class

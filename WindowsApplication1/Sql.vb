@@ -44,7 +44,7 @@
             If where <> Nothing Then
                 Return "select " & String.Join(",", hasil) & " from " & table & "where " & String.Join(" ", where, op, where_val)
             Else
-                Return "select " & String.Join(",", hasil) & " from " & table & ";"
+                Return "select " & String.Join(",", hasil) & " from " & table
             End If
 
         End Function
