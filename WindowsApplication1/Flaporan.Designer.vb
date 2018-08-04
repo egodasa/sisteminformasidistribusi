@@ -42,8 +42,6 @@ Partial Class Flaporan
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Tawal = New System.Windows.Forms.DateTimePicker()
         Me.Bexit = New System.Windows.Forms.Button()
-        Me.BWlaporan = New System.ComponentModel.BackgroundWorker()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -63,7 +61,6 @@ Partial Class Flaporan
         Me.GroupBox1.TabIndex = 16
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Laporan Pengiriman Harian"
-        Me.GroupBox1.Visible = False
         '
         'Label2
         '
@@ -112,7 +109,6 @@ Partial Class Flaporan
         Me.GroupBox2.TabIndex = 23
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Laporan Pengiriman Bulanan"
-        Me.GroupBox2.Visible = False
         '
         'Label5
         '
@@ -161,14 +157,13 @@ Partial Class Flaporan
         Me.GroupBox3.TabIndex = 24
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Laporan Pengiriman Tahunan"
-        Me.GroupBox3.Visible = False
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(7, 19)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(66, 15)
+        Me.Label7.Size = New System.Drawing.Size(67, 15)
         Me.Label7.TabIndex = 21
         Me.Label7.Text = "Pilih Tahun"
         '
@@ -212,7 +207,6 @@ Partial Class Flaporan
         Me.GroupBox4.TabIndex = 25
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Laporan Pengiriman Rentang Waktu Tertentu"
-        Me.GroupBox4.Visible = False
         '
         'Label4
         '
@@ -279,20 +273,6 @@ Partial Class Flaporan
         Me.Bexit.TabIndex = 24
         Me.Bexit.Text = "KELUAR"
         Me.Bexit.UseVisualStyleBackColor = False
-        Me.Bexit.Visible = False
-        '
-        'BWlaporan
-        '
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(106, 300)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(192, 25)
-        Me.Label1.TabIndex = 24
-        Me.Label1.Text = "Memuat Laporan..."
         '
         'Flaporan
         '
@@ -303,7 +283,6 @@ Partial Class Flaporan
         Me.Controls.Add(Me.Bexit)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -319,7 +298,6 @@ Partial Class Flaporan
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GroupBox1 As GroupBox
@@ -341,6 +319,4 @@ Partial Class Flaporan
     Friend WithEvents Button4 As Button
     Friend WithEvents Tawal As DateTimePicker
     Friend WithEvents Bexit As Button
-    Friend WithEvents BWlaporan As System.ComponentModel.BackgroundWorker
-    Friend WithEvents Label1 As Label
 End Class

@@ -194,6 +194,20 @@
     <Compile Include="Fsupir.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="laporan\PengirimanTahunan.vb">
+      <DependentUpon>PengirimanTahunan.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="laporan\PengirimanBulanan.vb">
+      <DependentUpon>PengirimanBulanan.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="laporan\Pengiriman.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -259,6 +273,16 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fsupir.resx">
       <DependentUpon>Fsupir.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="laporan\PengirimanTahunan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PengirimanTahunan.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="laporan\PengirimanBulanan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PengirimanBulanan.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="laporan\Pengiriman.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

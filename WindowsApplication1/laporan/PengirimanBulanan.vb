@@ -18,7 +18,7 @@ Imports System
 Imports System.ComponentModel
 
 
-Public Class Pengiriman
+Public Class PengirimanBulanan
     Inherits ReportClass
     
     Public Sub New()
@@ -27,7 +27,7 @@ Public Class Pengiriman
     
     Public Overrides Property ResourceName() As String
         Get
-            Return "Pengiriman.rpt"
+            Return "PengirimanBulanan.rpt"
         End Get
         Set
             'Do nothing
@@ -45,7 +45,7 @@ Public Class Pengiriman
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "SastraJayaPratama.Pengiriman.rpt"
+            Return "SastraJayaPratama.PengirimanBulanan.rpt"
         End Get
         Set
             'Do nothing
@@ -70,7 +70,7 @@ Public Class Pengiriman
     
     <Browsable(false),  _
      DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Section3() As CrystalDecisions.CrystalReports.Engine.Section
+    Public ReadOnly Property GroupHeaderSection1() As CrystalDecisions.CrystalReports.Engine.Section
         Get
             Return Me.ReportDefinition.Sections(2)
         End Get
@@ -78,7 +78,7 @@ Public Class Pengiriman
     
     <Browsable(false),  _
      DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Section4() As CrystalDecisions.CrystalReports.Engine.Section
+    Public ReadOnly Property Section3() As CrystalDecisions.CrystalReports.Engine.Section
         Get
             Return Me.ReportDefinition.Sections(3)
         End Get
@@ -86,9 +86,25 @@ Public Class Pengiriman
     
     <Browsable(false),  _
      DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Section5() As CrystalDecisions.CrystalReports.Engine.Section
+    Public ReadOnly Property GroupFooterSection1() As CrystalDecisions.CrystalReports.Engine.Section
         Get
             Return Me.ReportDefinition.Sections(4)
+        End Get
+    End Property
+    
+    <Browsable(false),  _
+     DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
+    Public ReadOnly Property Section4() As CrystalDecisions.CrystalReports.Engine.Section
+        Get
+            Return Me.ReportDefinition.Sections(5)
+        End Get
+    End Property
+    
+    <Browsable(false),  _
+     DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
+    Public ReadOnly Property Section5() As CrystalDecisions.CrystalReports.Engine.Section
+        Get
+            Return Me.ReportDefinition.Sections(6)
         End Get
     End Property
     
@@ -102,7 +118,7 @@ Public Class Pengiriman
 End Class
 
 <System.Drawing.ToolboxBitmapAttribute(GetType(CrystalDecisions.[Shared].ExportOptions), "report.bmp")>  _
-Public Class CachedPengiriman
+Public Class CachedPengirimanBulanan
     Inherits Component
     Implements ICachedReport
     
@@ -144,7 +160,7 @@ Public Class CachedPengiriman
     End Property
     
     Public Overridable Function CreateReport() As CrystalDecisions.CrystalReports.Engine.ReportDocument Implements CrystalDecisions.ReportSource.ICachedReport.CreateReport
-        Dim rpt As Pengiriman = New Pengiriman()
+        Dim rpt As PengirimanBulanan = New PengirimanBulanan()
         rpt.Site = Me.Site
         Return rpt
     End Function
