@@ -89,7 +89,7 @@ Public Class Fpengiriman
             SetAgenValue()
             RunQuery(agen.Insert())
             Dim id_agen As DataTable = FetchData("SELECT LAST_INSERT_ID() AS id")
-            list_agen = FetchData(SqlHelper.Query.SelectAll("tbl_agen"))
+            list_agen = FetchData(SqlHelper.Query.SelectAll("tbl_agen_truk"))
             Cagen.DataSource = list_agen
             Cagen.SelectedValue = id_agen.Rows(0).Item("id")
         End If
@@ -266,8 +266,15 @@ Public Class Fpengiriman
 
     Private Sub Tsisa_KeyUp(sender As Object, e As KeyEventArgs) Handles Tsisa.KeyUp
         If e.KeyData = Keys.Enter Then
-            Tketerangan.Focus()
-            Tuang_jalan.Value = Ttotal_ongkos.Value - Tsisa.Value
+            If Ttotal_ongkos.Value - Tsisa.Value >= 0 Then
+                Tuang_jalan.Value = Ttotal_ongkos.Value - Tsisa.Value
+                Tketerangan.Focus()
+            Else
+                MessageBox.Show("Sisa uang jalan terlalu besar!", "Pesan")
+                Tsisa.Value = 0
+                Tsisa.ResetText()
+                Tsisa.Focus()
+            End If
         End If
     End Sub
 
