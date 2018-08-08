@@ -7,6 +7,7 @@ CREATE TABLE `tbl_agen_truk` (
   PRIMARY KEY (`id_agen`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+INSERT INTO `tbl_agen_truk` (`nm_agen`) VALUES ('Tanpa Agen'),('Milik Perusahan');
 
 DROP TABLE IF EXISTS `tbl_kota`;
 CREATE TABLE `tbl_kota` (
@@ -23,13 +24,13 @@ CREATE TABLE `tbl_pengguna` (
   `username` varchar(30) NOT NULL,
   `password` text NOT NULL,
   `nm_lengkap` varchar(100) NOT NULL,
-  `tipe` enum('Admin','Karyawan','Pemilik') NOT NULL,
+  `tipe` enum('Admin','Karyawan','Pimpinan') NOT NULL,
   PRIMARY KEY (`id_pengguna`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `tbl_pengguna` (`id_pengguna`, `username`, `password`, `nm_lengkap`, `tipe`) VALUES
-(1,	'admin',	'21232f297a57a5a743894a0e4a801fc3',	'admin',	'Admin'),
-(2,	'pemilik',	'58399557dae3c60e23c78606771dfa3d',	'Pemilik',	'Pimpinan'),
+(1,	'admin',	'21232f297a57a5a743894a0e4a801fc3',	'Admin',	'Admin'),
+(2,	'pimpinan',	'58399557dae3c60e23c78606771dfa3d',	'Pimpinan',	'Pimpinan'),
 (3,	'karyawan',	'9e014682c94e0f2cc834bf7348bda428',	'Karyawan',	'Karyawan');
 
 DROP TABLE IF EXISTS `tbl_pengiriman`;
