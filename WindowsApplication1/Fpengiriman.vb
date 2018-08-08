@@ -110,7 +110,6 @@ Public Class Fpengiriman
             Ckota.SelectedValue = id_kota.Rows(0).Item("id")
         End If
         SetPengirimanValue()
-
         RunQuery(Fpengiriman_daftar.pengiriman.Insert())
         Fpengiriman_daftar.DGpengiriman.DataSource = FetchData(Fpengiriman_daftar.pengiriman.SelectMultiple())
         Call successMessage()
