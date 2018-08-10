@@ -1,11 +1,10 @@
-﻿Imports System.Text.RegularExpressions
-Public Class Fpengiriman
+﻿Public Class Fpengiriman
     Dim agen As New SqlHelper.DataQuery
     Dim supir As New SqlHelper.DataQuery
     Dim truk As New SqlHelper.DataQuery
     Dim kota As New SqlHelper.DataQuery
     Private list_supir, list_agen, list_truk, list_kota As DataTable
-    Private Sub LoadForm(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub LoadForm(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         agen.table = "tbl_agen_truk"
         supir.table = "tbl_supir"
         truk.table = "tbl_truk"
@@ -76,7 +75,7 @@ Public Class Fpengiriman
         }
     End Sub
 
-    Private Sub AddPengiriman(sender As Object, e As EventArgs) Handles Badd.Click
+    Private Sub AddPengiriman(ByVal sender As Object, ByVal e As EventArgs) Handles Badd.Click
         If Csupir.SelectedIndex = -1 Then
             SetSupirValue()
             RunQuery(supir.Insert())
@@ -137,22 +136,22 @@ Public Class Fpengiriman
         Ttotal_biaya_truk.Value = 0
         Tno_do.Focus()
     End Sub
-    Private Sub CancelAction(sender As Object, e As EventArgs) Handles Bcancel.Click
+    Private Sub CancelAction(ByVal sender As Object, ByVal e As EventArgs) Handles Bcancel.Click
         ResetForm()
     End Sub
 
-    Private Sub CloseForm(sender As Object, e As EventArgs) Handles Bexit.Click
+    Private Sub CloseForm(ByVal sender As Object, ByVal e As EventArgs) Handles Bexit.Click
         Me.Close()
     End Sub
 
-    Private Sub DaftarPembelianToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    Private Sub DaftarPembelianToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         Fpengiriman_daftar.ShowDialog()
     End Sub
-    Private Sub DaftarProdukToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    Private Sub DaftarProdukToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         Fkelola_supir.ShowDialog()
     End Sub
 
-    Private Sub DaftarSatuanToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    Private Sub DaftarSatuanToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         Fkota.ShowDialog()
     End Sub
 
@@ -174,7 +173,7 @@ Public Class Fpengiriman
         End If
     End Sub
 
-    Private Sub HitungTotalOngkos(sender As Object, e As KeyEventArgs) Handles Tbiaya_truk.KeyUp
+    Private Sub HitungTotalOngkos(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Tbiaya_truk.KeyUp
         If e.KeyData = Keys.Enter Then
             If Tton.Value <> 0 Then
                 Ttotal_ongkos.Value = Tton.Value * Tbiaya_truk.Value
@@ -182,7 +181,7 @@ Public Class Fpengiriman
         End If
     End Sub
 
-    Private Sub HitungUangJalan(sender As Object, e As KeyEventArgs) Handles Tsisa.KeyUp
+    Private Sub HitungUangJalan(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Tsisa.KeyUp
         If e.KeyData = Keys.Enter Then
             If Ttotal_ongkos.Value <> 0 Then
                 Tuang_jalan.Value = Ttotal_ongkos.Value - Tsisa.Value
@@ -190,7 +189,7 @@ Public Class Fpengiriman
         End If
     End Sub
 
-    Private Sub Tno_do_KeyUp(sender As Object, e As KeyEventArgs) Handles Tno_do.KeyUp
+    Private Sub Tno_do_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Tno_do.KeyUp
         If e.KeyData = Keys.Enter Then
             Dim data As DataTable = FetchData(SqlHelper.Query.SelectAll("tbl_pengiriman", "nomor_do", "=", SqlHelper.Query.SqlString(Tno_do.Text)))
             If data.Rows.Count > 0 Then
@@ -203,68 +202,68 @@ Public Class Fpengiriman
         End If
     End Sub
 
-    Private Sub Ttgl_berangkat_KeyUp(sender As Object, e As KeyEventArgs) Handles Ttgl_berangkat.KeyUp
+    Private Sub Ttgl_berangkat_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Ttgl_berangkat.KeyUp
         If e.KeyData = Keys.Enter Then
             Ttgl_sampai.Focus()
         End If
     End Sub
 
-    Private Sub Ckota_KeyUp(sender As Object, e As KeyEventArgs) Handles Ckota.KeyUp
+    Private Sub Ckota_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Ckota.KeyUp
         If e.KeyData = Keys.Enter Then
             Ctruk.Focus()
         End If
     End Sub
 
-    Private Sub Ctruk_KeyUp(sender As Object, e As KeyEventArgs) Handles Ctruk.KeyUp
+    Private Sub Ctruk_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Ctruk.KeyUp
         If e.KeyData = Keys.Enter Then
             Cagen.Focus()
         End If
     End Sub
 
-    Private Sub Cagen_KeyUp(sender As Object, e As KeyEventArgs) Handles Cagen.KeyUp
+    Private Sub Cagen_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Cagen.KeyUp
         If e.KeyData = Keys.Enter Then
             Csupir.Focus()
         End If
     End Sub
 
-    Private Sub Csupir_KeyUp(sender As Object, e As KeyEventArgs) Handles Csupir.KeyUp
+    Private Sub Csupir_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Csupir.KeyUp
         If e.KeyData = Keys.Enter Then
             Tnohp.Focus()
         End If
     End Sub
 
-    Private Sub Tnohp_TextChanged(sender As Object, e As KeyEventArgs) Handles Tnohp.KeyUp
+    Private Sub Tnohp_TextChanged(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Tnohp.KeyUp
         If e.KeyData = Keys.Enter Then
             Tton.Focus()
         End If
     End Sub
 
-    Private Sub Tton_KeyUp(sender As Object, e As KeyEventArgs) Handles Tton.KeyUp
+    Private Sub Tton_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Tton.KeyUp
         If e.KeyData = Keys.Enter Then
             Tsak.Focus()
         End If
     End Sub
 
-    Private Sub Tsak_KeyUp(sender As Object, e As KeyEventArgs) Handles Tsak.KeyUp
+    Private Sub Tsak_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Tsak.KeyUp
         If e.KeyData = Keys.Enter Then
             Ttarif.Focus()
         End If
     End Sub
 
-    Private Sub Ttarif_KeyUp(sender As Object, e As KeyEventArgs) Handles Ttarif.KeyUp
+    Private Sub Ttarif_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Ttarif.KeyUp
         If e.KeyData = Keys.Enter Then
             Tbiaya_truk.Focus()
         End If
     End Sub
 
-    Private Sub Tbiaya_truk_KeyUp(sender As Object, e As KeyEventArgs) Handles Tbiaya_truk.KeyUp
+    Private Sub Tbiaya_truk_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Tbiaya_truk.KeyUp
         If e.KeyData = Keys.Enter Then
             Tsisa.Focus()
             Ttotal_ongkos.Value = Tton.Value * Tbiaya_truk.Value
         End If
     End Sub
 
-    Private Sub Tsisa_KeyUp(sender As Object, e As KeyEventArgs) Handles Tsisa.KeyUp
+    Private Sub Tsisa_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Tsisa.KeyUp
         If e.KeyData = Keys.Enter Then
             If Ttotal_ongkos.Value - Tsisa.Value >= 0 Then
                 Tuang_jalan.Value = Ttotal_ongkos.Value - Tsisa.Value
@@ -278,17 +277,17 @@ Public Class Fpengiriman
         End If
     End Sub
 
-    Private Sub Ttgl_sampai_KeyUp(sender As Object, e As KeyEventArgs) Handles Ttgl_sampai.KeyUp
+    Private Sub Ttgl_sampai_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Ttgl_sampai.KeyUp
         If e.KeyData = Keys.Enter Then
             Ckota.Focus()
         End If
     End Sub
 
-    Private Sub Ttarif_Leave(sender As Object, e As EventArgs) Handles Ttarif.Leave
+    Private Sub Ttarif_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles Ttarif.Leave
         Ttotal_tarif.Value = Ttarif.Value * Tton.Value
     End Sub
 
-    Private Sub Tbiaya_truk_Leave(sender As Object, e As EventArgs) Handles Tbiaya_truk.Leave
+    Private Sub Tbiaya_truk_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles Tbiaya_truk.Leave
         Ttotal_biaya_truk.Value = Tton.Value * Tbiaya_truk.Value
     End Sub
 
