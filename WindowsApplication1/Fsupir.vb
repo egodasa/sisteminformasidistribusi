@@ -1,6 +1,9 @@
 ﻿Public Class Fkelola_supir
     Dim supir As New SqlHelper.DataQuery
     Dim current_id As Integer
+    Private Function FormValidation()
+        Return Tnm_supir.TextLength > 0
+    End Function
     Private Sub SetFormData()
         supir.formData = New List(Of SqlHelper.SqlManipulation) From {
             New SqlHelper.SqlManipulation("nm_supir", SqlHelper.Query.SqlString(Tnm_supir.Text)),
@@ -37,11 +40,13 @@
         End If
     End Sub
     Private Sub SaveData(sender As Object, e As EventArgs) Handles Bsave.Click
-        SetFormData()
+        If FormValidation() = True Then
+            SetFormData()
         RunQuery(supir.Insert())
         Call successMessage()
         DGproduk.DataSource = FetchData(supir.SelectMultiple())
-        Bcancel.PerformClick()
+            Bcancel.PerformClick()
+        End If
     End Sub
     Private Sub GetDetail(ByVal x As Integer)
         Bedit.Enabled = True
@@ -57,11 +62,13 @@
         End If
     End Sub
     Private Sub EditData(sender As Object, e As EventArgs) Handles Bedit.Click
-        SetFormData()
+        If FormValidation() = True Then
+            SetFormData()
         RunQuery(supir.Update(DGproduk.Rows(current_id).Cells(0).Value.ToString()))
         Call editMessage()
         Bcancel.PerformClick()
-        DGproduk.DataSource = FetchData(supir.SelectMultiple())
+            DGproduk.DataSource = FetchData(supir.SelectMultiple())
+        End If
     End Sub
 
     Private Sub DGsatuan_MouseClick(sender As Object, e As MouseEventArgs) Handles DGproduk.MouseClick

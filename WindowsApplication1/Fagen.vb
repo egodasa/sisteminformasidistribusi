@@ -1,6 +1,9 @@
 ﻿Public Class Fagen
     Dim agen As New SqlHelper.DataQuery
     Dim current_id As Integer
+    Private Function FormValidation()
+        Return Tnm_agen.TextLength > 0
+    End Function
     Private Sub SetFormData()
         agen.formData = New List(Of SqlHelper.SqlManipulation) From {
             New SqlHelper.SqlManipulation("nm_agen", SqlHelper.Query.SqlString(Tnm_agen.Text)),
@@ -40,11 +43,13 @@
         End If
     End Sub
     Private Sub SaveData(sender As Object, e As EventArgs) Handles Bsave.Click
-        SetFormData()
-        RunQuery(agen.Insert())
-        Call successMessage()
-        DGpemasok.DataSource = FetchData(agen.SelectMultiple())
-        Bcancel.PerformClick()
+        If FormValidation() = True Then
+            SetFormData()
+            RunQuery(agen.Insert())
+            Call successMessage()
+            DGpemasok.DataSource = FetchData(agen.SelectMultiple())
+            Bcancel.PerformClick()
+        End If
     End Sub
     Private Sub GetDetail(ByVal x As Integer)
         Bedit.Enabled = True
@@ -61,11 +66,13 @@
         End If
     End Sub
     Private Sub EditData(sender As Object, e As EventArgs) Handles Bedit.Click
-        SetFormData()
-        RunQuery(agen.Update(DGpemasok.Rows(current_id).Cells(0).Value.ToString()))
-        Call editMessage()
-        Bcancel.PerformClick()
-        DGpemasok.DataSource = FetchData(agen.SelectMultiple())
+        If FormValidation() = True Then
+            SetFormData()
+            RunQuery(agen.Update(DGpemasok.Rows(current_id).Cells(0).Value.ToString()))
+            Call editMessage()
+            Bcancel.PerformClick()
+            DGpemasok.DataSource = FetchData(agen.SelectMultiple())
+        End If
     End Sub
 
     Private Sub DGsatuan_MouseClick(sender As Object, e As MouseEventArgs) Handles DGpemasok.MouseClick

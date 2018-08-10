@@ -1,6 +1,10 @@
 ﻿Public Class Ftruk
     Dim truk As New SqlHelper.DataQuery
     Dim current_id As Integer
+    Private Function FormValidation()
+        Return Tnopol.TextLength > 0 And Cagen.Text.Length > 0
+    End Function
+
     Private Sub SetFormData()
         truk.formData = New List(Of SqlHelper.SqlManipulation) From {
             New SqlHelper.SqlManipulation("nopol", SqlHelper.Query.SqlString(Tnopol.Text)),
@@ -30,11 +34,13 @@
         Cagen.SelectedValue = DGtruk.Rows(x).Cells(2).Value
     End Sub
     Private Sub EditData(sender As Object, e As EventArgs) Handles Bedit.Click
-        SetFormData()
-        RunQuery(truk.Update(DGtruk.Rows(current_id).Cells(0).Value.ToString()))
-        Call editMessage()
-        Bcancel.PerformClick()
-        DGtruk.DataSource = FetchData(truk.SelectMultiple())
+        If FormValidation() = True Then
+            SetFormData()
+            RunQuery(truk.Update(DGtruk.Rows(current_id).Cells(0).Value.ToString()))
+            Call editMessage()
+            Bcancel.PerformClick()
+            DGtruk.DataSource = FetchData(truk.SelectMultiple())
+        End If
     End Sub
     Private Sub DeleteData(ByVal x As Integer)
         If MessageBox.Show("Apakah yakin data ini dihapus?", "Peringatan", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) = DialogResult.Yes Then
@@ -44,11 +50,13 @@
         End If
     End Sub
     Private Sub SaveData(sender As Object, e As EventArgs) Handles Bsave.Click
-        SetFormData()
-        RunQuery(truk.Insert())
-        Call successMessage()
-        DGtruk.DataSource = FetchData(truk.SelectMultiple())
-        Bcancel.PerformClick()
+        If FormValidation() = True Then
+            SetFormData()
+            RunQuery(truk.Insert())
+            Call successMessage()
+            DGtruk.DataSource = FetchData(truk.SelectMultiple())
+            Bcancel.PerformClick()
+        End If
     End Sub
     Private Sub CloseForm(sender As Object, e As EventArgs) Handles Bexit.Click
         If MessageBox.Show("Apakah Anda yakin ingin KELUAR?", "Peringatan!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) = DialogResult.Yes Then

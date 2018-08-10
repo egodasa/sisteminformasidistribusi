@@ -1,9 +1,13 @@
-﻿Public Class Fpengiriman
+﻿Imports System.Text.RegularExpressions
+Public Class Fpengiriman
     Dim agen As New SqlHelper.DataQuery
     Dim supir As New SqlHelper.DataQuery
     Dim truk As New SqlHelper.DataQuery
     Dim kota As New SqlHelper.DataQuery
     Private list_supir, list_agen, list_truk, list_kota As DataTable
+    Private Function FormValidation()
+        Return Tno_do.TextLength <> 0 And Ckota.Text.Length <> 0 And Ctruk.Text.Length <> 0 And Csupir.Text.Length <> 0 And Cagen.Text.Length <> 0
+    End Function
     Private Sub LoadForm(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         agen.table = "tbl_agen_truk"
         supir.table = "tbl_supir"
@@ -76,44 +80,46 @@
     End Sub
 
     Private Sub AddPengiriman(ByVal sender As Object, ByVal e As EventArgs) Handles Badd.Click
-        If Csupir.SelectedIndex = -1 Then
-            SetSupirValue()
-            RunQuery(supir.Insert())
-            Dim id_supir As DataTable = FetchData("SELECT LAST_INSERT_ID() AS id")
-            list_supir = FetchData(SqlHelper.Query.SelectAll("tbl_supir"))
-            Csupir.DataSource = list_supir
-            Csupir.SelectedValue = id_supir.Rows(0).Item("id")
-        End If
-        If Cagen.SelectedIndex = -1 Then
-            SetAgenValue()
-            RunQuery(agen.Insert())
-            Dim id_agen As DataTable = FetchData("SELECT LAST_INSERT_ID() AS id")
-            list_agen = FetchData(SqlHelper.Query.SelectAll("tbl_agen_truk"))
-            Cagen.DataSource = list_agen
-            Cagen.SelectedValue = id_agen.Rows(0).Item("id")
-        End If
-        If Ctruk.SelectedIndex = -1 Then
-            SetTrukValue()
-            RunQuery(truk.Insert())
-            Dim id_truk As DataTable = FetchData("SELECT LAST_INSERT_ID() AS id")
-            list_truk = FetchData(SqlHelper.Query.SelectAll("daftar_truk"))
-            Ctruk.DataSource = list_truk
-            Ctruk.SelectedValue = id_truk.Rows(0).Item("id")
-        End If
-        If Ckota.SelectedIndex = -1 Then
-            SetKotaValue()
-            RunQuery(kota.Insert())
-            Dim id_kota As DataTable = FetchData("SELECT LAST_INSERT_ID() AS id")
-            list_kota = FetchData(SqlHelper.Query.SelectAll("tbl_kota"))
-            Ckota.DataSource = list_kota
-            Ckota.SelectedValue = id_kota.Rows(0).Item("id")
-        End If
-        SetPengirimanValue()
+        If FormValidation() = True Then
+            If Csupir.SelectedIndex = -1 Then
+                SetSupirValue()
+                RunQuery(supir.Insert())
+                Dim id_supir As DataTable = FetchData("SELECT LAST_INSERT_ID() AS id")
+                list_supir = FetchData(SqlHelper.Query.SelectAll("tbl_supir"))
+                Csupir.DataSource = list_supir
+                Csupir.SelectedValue = id_supir.Rows(0).Item("id")
+            End If
+            If Cagen.SelectedIndex = -1 Then
+                SetAgenValue()
+                RunQuery(agen.Insert())
+                Dim id_agen As DataTable = FetchData("SELECT LAST_INSERT_ID() AS id")
+                list_agen = FetchData(SqlHelper.Query.SelectAll("tbl_agen_truk"))
+                Cagen.DataSource = list_agen
+                Cagen.SelectedValue = id_agen.Rows(0).Item("id")
+            End If
+            If Ctruk.SelectedIndex = -1 Then
+                SetTrukValue()
+                RunQuery(truk.Insert())
+                Dim id_truk As DataTable = FetchData("SELECT LAST_INSERT_ID() AS id")
+                list_truk = FetchData(SqlHelper.Query.SelectAll("daftar_truk"))
+                Ctruk.DataSource = list_truk
+                Ctruk.SelectedValue = id_truk.Rows(0).Item("id")
+            End If
+            If Ckota.SelectedIndex = -1 Then
+                SetKotaValue()
+                RunQuery(kota.Insert())
+                Dim id_kota As DataTable = FetchData("SELECT LAST_INSERT_ID() AS id")
+                list_kota = FetchData(SqlHelper.Query.SelectAll("tbl_kota"))
+                Ckota.DataSource = list_kota
+                Ckota.SelectedValue = id_kota.Rows(0).Item("id")
+            End If
+            SetPengirimanValue()
 
-        RunQuery(Fpengiriman_daftar.pengiriman.Insert())
-        Fpengiriman_daftar.DGpengiriman.DataSource = FetchData(Fpengiriman_daftar.pengiriman.SelectMultiple())
-        Call successMessage()
-        ResetForm()
+            RunQuery(Fpengiriman_daftar.pengiriman.Insert())
+            Fpengiriman_daftar.DGpengiriman.DataSource = FetchData(Fpengiriman_daftar.pengiriman.SelectMultiple())
+            Call successMessage()
+            ResetForm()
+        End If
     End Sub
     Private Sub ResetForm()
         Ttgl_berangkat.ResetText()

@@ -1,6 +1,9 @@
 ﻿Public Class Fkota
     Dim kota As New SqlHelper.DataQuery
     Dim current_id As Integer
+    Private Function FormValidation()
+        Return Tnm_kota.TextLength > 0
+    End Function
     Private Sub SetFormData()
         kota.formData = New List(Of SqlHelper.SqlManipulation) From {
             New SqlHelper.SqlManipulation("nm_kota", SqlHelper.Query.SqlString(Tnm_kota.Text)),
@@ -27,11 +30,13 @@
         Ttarif.Text = DGsatuan.Rows(x).Cells(2).Value
     End Sub
     Private Sub EditData(sender As Object, e As EventArgs) Handles Bedit.Click
-        SetFormData()
-        RunQuery(kota.Update(DGsatuan.Rows(current_id).Cells(0).Value.ToString()))
-        Call editMessage()
-        Bcancel.PerformClick()
-        DGsatuan.DataSource = FetchData(kota.SelectMultiple())
+        If FormValidation() = True Then
+            SetFormData()
+            RunQuery(kota.Update(DGsatuan.Rows(current_id).Cells(0).Value.ToString()))
+            Call editMessage()
+            Bcancel.PerformClick()
+            DGsatuan.DataSource = FetchData(kota.SelectMultiple())
+        End If
     End Sub
     Private Sub DeleteData(ByVal x As Integer)
         If MessageBox.Show("Apakah yakin data ini dihapus?", "Peringatan", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) = DialogResult.Yes Then
@@ -41,11 +46,13 @@
         End If
     End Sub
     Private Sub SaveData(sender As Object, e As EventArgs) Handles Bsave.Click
-        SetFormData()
-        RunQuery(kota.Insert())
-        Call successMessage()
-        DGsatuan.DataSource = FetchData(kota.SelectMultiple())
-        Bcancel.PerformClick()
+        If FormValidation() = True Then
+            SetFormData()
+            RunQuery(kota.Insert())
+            Call successMessage()
+            DGsatuan.DataSource = FetchData(kota.SelectMultiple())
+            Bcancel.PerformClick()
+        End If
     End Sub
     Private Sub CancelAction(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bcancel.Click
         Bedit.Enabled = False
