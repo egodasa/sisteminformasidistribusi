@@ -3,8 +3,6 @@ Public Class Flaporan_CR
     Public CR As New ReportDocument()
     Public tipe_laporan As String
     Private Sub Flaporan1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        CR.Load("laporan/Pengiriman.rpt")
-        CR.SetDatabaseLogon(My.Settings.db_username, My.Settings.db_password, My.Settings.db_server, My.Settings.db_database)
         If tipe_laporan = "harian" Then
             CR.Load("laporan/Pengiriman.rpt")
             CR.SetParameterValue("judul", "Tanggal " & Flaporan.Tharian.Value.ToString("dd MMMM yyyy"))
