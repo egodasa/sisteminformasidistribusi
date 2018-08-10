@@ -1,17 +1,39 @@
-﻿Public Class Fpengiriman
+﻿Imports System.Text.RegularExpressions
+Public Class Fpengiriman
     Dim agen As New SqlHelper.DataQuery
     Dim supir As New SqlHelper.DataQuery
     Dim truk As New SqlHelper.DataQuery
     Dim kota As New SqlHelper.DataQuery
+    Private list_supir, list_agen, list_truk, list_kota As DataTable
     Private Sub LoadForm(sender As Object, e As EventArgs) Handles MyBase.Load
         agen.table = "tbl_agen_truk"
         supir.table = "tbl_supir"
         truk.table = "tbl_truk"
         kota.table = "tbl_kota"
-        FetchComboboxData(SqlHelper.Query.SelectAll("daftar_truk"), Ctruk, "nopol", "id_truk")
-        FetchComboboxData(SqlHelper.Query.SelectAll("tbl_supir"), Csupir, "nm_supir", "id_supir")
-        FetchComboboxData(SqlHelper.Query.SelectAll("tbl_kota"), Ckota, "nm_kota", "id_kota")
-        FetchComboboxData(SqlHelper.Query.SelectAll("tbl_agen_truk"), Cagen, "nm_agen", "id_agen")
+        list_supir = FetchData(SqlHelper.Query.SelectAll("tbl_supir"))
+        list_agen = FetchData(SqlHelper.Query.SelectAll("tbl_agen_truk"))
+        list_truk = FetchData(SqlHelper.Query.SelectAll("daftar_truk"))
+        list_kota = FetchData(SqlHelper.Query.SelectAll("tbl_kota"))
+        With Ctruk
+            .DataSource = list_truk
+            .ValueMember = "id_truk"
+            .DisplayMember = "nopol"
+        End With
+        With Cagen
+            .DataSource = list_agen
+            .ValueMember = "id_agen"
+            .DisplayMember = "nm_agen"
+        End With
+        With Csupir
+            .DataSource = list_supir
+            .ValueMember = "id_supir"
+            .DisplayMember = "nm_supir"
+        End With
+        With Ckota
+            .DataSource = list_kota
+            .ValueMember = "id_kota"
+            .DisplayMember = "nm_kota"
+        End With
         ResetForm()
     End Sub
     Private Sub SetPengirimanValue()
@@ -59,32 +81,36 @@
             SetSupirValue()
             RunQuery(supir.Insert())
             Dim id_supir As DataTable = FetchData("SELECT LAST_INSERT_ID() AS id")
-            FetchComboboxData(SqlHelper.Query.SelectAll("tbl_supir"), Csupir, "nm_supir", "id_supir")
+            list_supir = FetchData(SqlHelper.Query.SelectAll("tbl_supir"))
+            Csupir.DataSource = list_supir
             Csupir.SelectedValue = id_supir.Rows(0).Item("id")
         End If
         If Cagen.SelectedIndex = -1 Then
             SetAgenValue()
             RunQuery(agen.Insert())
             Dim id_agen As DataTable = FetchData("SELECT LAST_INSERT_ID() AS id")
-            FetchComboboxData(SqlHelper.Query.SelectAll("tbl_agen_truk"), Cagen, "nm_agen", "id_agen")
+            list_agen = FetchData(SqlHelper.Query.SelectAll("tbl_agen_truk"))
+            Cagen.DataSource = list_agen
             Cagen.SelectedValue = id_agen.Rows(0).Item("id")
         End If
         If Ctruk.SelectedIndex = -1 Then
             SetTrukValue()
             RunQuery(truk.Insert())
             Dim id_truk As DataTable = FetchData("SELECT LAST_INSERT_ID() AS id")
-            FetchComboboxData(SqlHelper.Query.SelectAll("daftar_truk"), Ctruk, "nopol", "id_truk")
+            list_truk = FetchData(SqlHelper.Query.SelectAll("daftar_truk"))
+            Ctruk.DataSource = list_truk
             Ctruk.SelectedValue = id_truk.Rows(0).Item("id")
         End If
         If Ckota.SelectedIndex = -1 Then
             SetKotaValue()
             RunQuery(kota.Insert())
             Dim id_kota As DataTable = FetchData("SELECT LAST_INSERT_ID() AS id")
-            FetchComboboxData(SqlHelper.Query.SelectAll("tbl_kota"), Ckota, "nm_kota", "id_kota")
+            list_kota = FetchData(SqlHelper.Query.SelectAll("tbl_kota"))
+            Ckota.DataSource = list_kota
             Ckota.SelectedValue = id_kota.Rows(0).Item("id")
         End If
         SetPengirimanValue()
-        MessageBox.Show(Fpengiriman_daftar.pengiriman.Insert())
+
         RunQuery(Fpengiriman_daftar.pengiriman.Insert())
         Fpengiriman_daftar.DGpengiriman.DataSource = FetchData(Fpengiriman_daftar.pengiriman.SelectMultiple())
         Call successMessage()
@@ -95,20 +121,20 @@
         Ttgl_sampai.ResetText()
         Tno_do.Clear()
         Tnohp.Clear()
-        Tton.ResetText()
-        Tsak.ResetText()
-        Tbiaya_truk.ResetText()
-        Ttarif.ResetText()
-        Tsisa.ResetText()
-        Ttotal_ongkos.ResetText()
-        Tuang_jalan.ResetText()
+        Tton.Value = 0
+        Tsak.Value = 0
+        Tbiaya_truk.Value = 0
+        Ttarif.Value = 0
+        Tsisa.Value = 0
+        Ttotal_ongkos.Value = 0
+        Tuang_jalan.Value = 0
         Ctruk.SelectedIndex = -1
         Csupir.SelectedIndex = -1
         Cagen.SelectedIndex = -1
         Ckota.SelectedIndex = -1
         Tketerangan.Clear()
-        Ttotal_tarif.ResetText()
-        Ttotal_biaya_truk.ResetText()
+        Ttotal_tarif.Value = 0
+        Ttotal_biaya_truk.Value = 0
         Tno_do.Focus()
     End Sub
     Private Sub CancelAction(sender As Object, e As EventArgs) Handles Bcancel.Click
@@ -132,40 +158,48 @@
 
     Private Sub GetDetailSupir(ByVal sender As Object, ByVal e As EventArgs) Handles Csupir.Leave
         If Csupir.SelectedIndex <> -1 Then
-            Dim data As DataTable = FetchData(supir.SelectAll("id_supir", "=", Csupir.SelectedValue))
-            Tnohp.Text = data.Rows(0).Item("no_hp")
+            Tnohp.Text = list_supir.Rows(Csupir.SelectedIndex).Item("no_hp")
         End If
     End Sub
 
     Private Sub GetTrukDetail(ByVal sender As Object, ByVal e As EventArgs) Handles Ctruk.Leave
         If Ctruk.SelectedIndex <> -1 Then
-            Dim data As DataTable = FetchData(truk.SelectAll("id_truk", "=", Ctruk.SelectedValue))
-            Cagen.SelectedValue = data.Rows(0).Item("id_agen")
+            Cagen.SelectedValue = list_truk.Rows(Ctruk.SelectedIndex).Item("id_agen")
         End If
     End Sub
 
     Private Sub GetKotaDetail(ByVal sender As Object, ByVal e As EventArgs) Handles Ckota.Leave
         If Ckota.SelectedIndex <> -1 Then
-            Dim data As DataTable = FetchData(kota.SelectAll("id_kota", "=", Ckota.SelectedValue))
-            Ttarif.Value = data.Rows(0).Item("tarif")
+            Ttarif.Value = list_kota.Rows(Ckota.SelectedIndex).Item("tarif")
         End If
     End Sub
 
-    Private Sub HitungTotalOngkos(sender As Object, e As KeyEventArgs) Handles Tbiaya_truk.ValueChanged
-        If Tton.Value <> 0 Then
-            Ttotal_ongkos.Value = Tton.Value * Tbiaya_truk.Value
+    Private Sub HitungTotalOngkos(sender As Object, e As KeyEventArgs) Handles Tbiaya_truk.KeyUp
+        If e.KeyData = Keys.Enter Then
+            If Tton.Value <> 0 Then
+                Ttotal_ongkos.Value = Tton.Value * Tbiaya_truk.Value
+            End If
         End If
     End Sub
 
-    Private Sub HitungUangJalan(sender As Object, e As KeyEventArgs) Handles Tsisa.ValueChanged
-        If Ttotal_ongkos.Value <> 0 Then
-            Tuang_jalan.Value = Ttotal_ongkos.Value - Tsisa.Value
+    Private Sub HitungUangJalan(sender As Object, e As KeyEventArgs) Handles Tsisa.KeyUp
+        If e.KeyData = Keys.Enter Then
+            If Ttotal_ongkos.Value <> 0 Then
+                Tuang_jalan.Value = Ttotal_ongkos.Value - Tsisa.Value
+            End If
         End If
     End Sub
 
     Private Sub Tno_do_KeyUp(sender As Object, e As KeyEventArgs) Handles Tno_do.KeyUp
         If e.KeyData = Keys.Enter Then
-            Ttgl_berangkat.Focus()
+            Dim data As DataTable = FetchData(SqlHelper.Query.SelectAll("tbl_pengiriman", "nomor_do", "=", SqlHelper.Query.SqlString(Tno_do.Text)))
+            If data.Rows.Count > 0 Then
+                MessageBox.Show("Nomor DO " & Tno_do.Text & " sudah ada!")
+                Tno_do.Clear()
+                Tno_do.Focus()
+            Else
+                Ttgl_berangkat.Focus()
+            End If
         End If
     End Sub
 
@@ -232,8 +266,15 @@
 
     Private Sub Tsisa_KeyUp(sender As Object, e As KeyEventArgs) Handles Tsisa.KeyUp
         If e.KeyData = Keys.Enter Then
-            Tketerangan.Focus()
-            Tuang_jalan.Value = Ttotal_ongkos.Value - Tsisa.Value
+            If Ttotal_ongkos.Value - Tsisa.Value >= 0 Then
+                Tuang_jalan.Value = Ttotal_ongkos.Value - Tsisa.Value
+                Tketerangan.Focus()
+            Else
+                MessageBox.Show("Sisa uang jalan terlalu besar!", "Pesan")
+                Tsisa.Value = 0
+                Tsisa.ResetText()
+                Tsisa.Focus()
+            End If
         End If
     End Sub
 

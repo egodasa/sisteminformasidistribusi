@@ -60,8 +60,8 @@ Partial Class Fpengiriman_daftar
         Me.DGpengiriman.AllowUserToAddRows = False
         Me.DGpengiriman.AllowUserToDeleteRows = False
         Me.DGpengiriman.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DGpengiriman.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGpengiriman.Location = New System.Drawing.Point(12, 76)
         Me.DGpengiriman.Name = "DGpengiriman"
