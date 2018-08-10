@@ -1,13 +1,14 @@
-﻿Public Class Fkelola_supir
-    Dim supir As New SqlHelper.DataQuery
+﻿Imports SqlHelper
+Public Class Fkelola_supir
+    Dim supir As New DataQuery
     Dim current_id As Integer
     Private Function FormValidation()
         Return Tnm_supir.TextLength > 0
     End Function
     Private Sub SetFormData()
-        supir.formData = New List(Of SqlHelper.SqlManipulation) From {
-            New SqlHelper.SqlManipulation("nm_supir", SqlHelper.Query.SqlString(Tnm_supir.Text)),
-            New SqlHelper.SqlManipulation("no_hp", SqlHelper.Query.SqlString(Tnohp.Text))
+        supir.formData = New List(Of SqlManipulation) From {
+            New SqlManipulation("nm_supir", Query.SqlString(Tnm_supir.Text)),
+            New SqlManipulation("no_hp", Query.SqlString(Tnohp.Text))
             }
     End Sub
     Private Sub LoadForm(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -16,10 +17,10 @@
         supir.view = Nothing
         supir.primary_key = "id_supir"
         supir.primary_key_caption = "id_supir"
-        supir.viewData = New List(Of SqlHelper.SqlView) From {
-            New SqlHelper.SqlView("id_supir", "id_supir"),
-            New SqlHelper.SqlView("nm_supir", "Nama Supir"),
-            New SqlHelper.SqlView("no_hp", "NOHP")
+        supir.viewData = New List(Of SqlView) From {
+            New SqlView("id_supir", "id_supir"),
+            New SqlView("nm_supir", "Nama Supir"),
+            New SqlView("no_hp", "NOHP")
             }
         DGproduk.DataSource = FetchData(supir.SelectMultiple())
         DGproduk.Columns(supir.primary_key_caption).Visible = False
@@ -42,9 +43,9 @@
     Private Sub SaveData(sender As Object, e As EventArgs) Handles Bsave.Click
         If FormValidation() = True Then
             SetFormData()
-        RunQuery(supir.Insert())
-        Call successMessage()
-        DGproduk.DataSource = FetchData(supir.SelectMultiple())
+            RunQuery(supir.Insert())
+            Call successMessage()
+            DGproduk.DataSource = FetchData(supir.SelectMultiple())
             Bcancel.PerformClick()
         End If
     End Sub
@@ -64,9 +65,9 @@
     Private Sub EditData(sender As Object, e As EventArgs) Handles Bedit.Click
         If FormValidation() = True Then
             SetFormData()
-        RunQuery(supir.Update(DGproduk.Rows(current_id).Cells(0).Value.ToString()))
-        Call editMessage()
-        Bcancel.PerformClick()
+            RunQuery(supir.Update(DGproduk.Rows(current_id).Cells(0).Value.ToString()))
+            Call editMessage()
+            Bcancel.PerformClick()
             DGproduk.DataSource = FetchData(supir.SelectMultiple())
         End If
     End Sub

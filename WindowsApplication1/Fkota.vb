@@ -1,13 +1,14 @@
-﻿Public Class Fkota
-    Dim kota As New SqlHelper.DataQuery
+﻿Imports SqlHelper
+Public Class Fkota
+    Dim kota As New DataQuery
     Dim current_id As Integer
     Private Function FormValidation()
         Return Tnm_kota.TextLength > 0
     End Function
     Private Sub SetFormData()
-        kota.formData = New List(Of SqlHelper.SqlManipulation) From {
-            New SqlHelper.SqlManipulation("nm_kota", SqlHelper.Query.SqlString(Tnm_kota.Text)),
-            New SqlHelper.SqlManipulation("tarif", Ttarif.Value)
+        kota.formData = New List(Of SqlManipulation) From {
+            New SqlManipulation("nm_kota", Query.SqlString(Tnm_kota.Text)),
+            New SqlManipulation("tarif", Ttarif.Value)
             }
     End Sub
     Private Sub LoadForm(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -15,10 +16,10 @@
         kota.view = Nothing
         kota.primary_key = "id_kota"
         kota.primary_key_caption = "id_kota"
-        kota.viewData = New List(Of SqlHelper.SqlView) From {
-            New SqlHelper.SqlView("id_kota", "id_kota"),
-            New SqlHelper.SqlView("nm_kota", "Nama_Kota"),
-            New SqlHelper.SqlView("tarif", "Tarif")
+        kota.viewData = New List(Of SqlView) From {
+            New SqlView("id_kota", "id_kota"),
+            New SqlView("nm_kota", "Nama_Kota"),
+            New SqlView("tarif", "Tarif")
             }
         DGsatuan.DataSource = FetchData(kota.SelectMultiple())
         DGsatuan.Columns(kota.primary_key_caption).Visible = False

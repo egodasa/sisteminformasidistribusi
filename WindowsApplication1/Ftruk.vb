@@ -1,14 +1,15 @@
-﻿Public Class Ftruk
-    Dim truk As New SqlHelper.DataQuery
+﻿Imports SqlHelper
+Public Class Ftruk
+    Dim truk As New DataQuery
     Dim current_id As Integer
     Private Function FormValidation()
         Return Tnopol.TextLength > 0 And Cagen.Text.Length > 0
     End Function
 
     Private Sub SetFormData()
-        truk.formData = New List(Of SqlHelper.SqlManipulation) From {
-            New SqlHelper.SqlManipulation("nopol", SqlHelper.Query.SqlString(Tnopol.Text)),
-            New SqlHelper.SqlManipulation("id_agen", Cagen.SelectedValue)
+        truk.formData = New List(Of SqlManipulation) From {
+            New SqlManipulation("nopol", Query.SqlString(Tnopol.Text)),
+            New SqlManipulation("id_agen", Cagen.SelectedValue)
             }
     End Sub
     Private Sub LoadForm(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -16,13 +17,13 @@
         truk.view = "daftar_truk"
         truk.primary_key = "id_truk"
         truk.primary_key_caption = "id_truk"
-        truk.viewData = New List(Of SqlHelper.SqlView) From {
-            New SqlHelper.SqlView("id_truk", "id_truk"),
-            New SqlHelper.SqlView("nopol", "Nomor Polisi"),
-            New SqlHelper.SqlView("id_agen", "id_agen"),
-            New SqlHelper.SqlView("nm_agen", "Agen")
+        truk.viewData = New List(Of SqlView) From {
+            New SqlView("id_truk", "id_truk"),
+            New SqlView("nopol", "Nomor Polisi"),
+            New SqlView("id_agen", "id_agen"),
+            New SqlView("nm_agen", "Agen")
             }
-        FetchComboboxData(SqlHelper.Query.SelectAll("tbl_agen_truk"), Cagen, "nm_agen", "id_agen")
+        FetchComboboxData(Query.SelectAll("tbl_agen_truk"), Cagen, "nm_agen", "id_agen")
         DGtruk.DataSource = FetchData(truk.SelectMultiple())
         DGtruk.Columns(truk.primary_key_caption).Visible = False
         DGtruk.Columns("id_agen").Visible = False

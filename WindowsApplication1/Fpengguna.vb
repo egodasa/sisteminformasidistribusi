@@ -1,15 +1,16 @@
-﻿Public Class Fpengguna
-    Dim pengguna As New SqlHelper.DataQuery
+﻿Imports SqlHelper
+Public Class Fpengguna
+    Dim pengguna As New DataQuery
     Dim current_id As Integer
     Private Function FormValidation()
         Return Tusername.TextLength <> 0 And Tpassword.TextLength <> 0 And Cjenis.Text.Length <> 0
     End Function
     Private Sub SetFormData()
-        pengguna.formData = New List(Of SqlHelper.SqlManipulation) From {
-            New SqlHelper.SqlManipulation("username", SqlHelper.Query.SqlString(Tusername.Text)),
-            New SqlHelper.SqlManipulation("password", "md5(" & SqlHelper.Query.SqlString(Tpassword.Text) & ")"),
-            New SqlHelper.SqlManipulation("nm_lengkap", SqlHelper.Query.SqlString(Tnm_lengkap.Text)),
-            New SqlHelper.SqlManipulation("tipe", SqlHelper.Query.SqlString(Cjenis.Text))
+        pengguna.formData = New List(Of SqlManipulation) From {
+            New SqlManipulation("username", Query.SqlString(Tusername.Text)),
+            New SqlManipulation("password", "md5(" & Query.SqlString(Tpassword.Text) & ")"),
+            New SqlManipulation("nm_lengkap", Query.SqlString(Tnm_lengkap.Text)),
+            New SqlManipulation("tipe", Query.SqlString(Cjenis.Text))
             }
     End Sub
     Private Sub LoadForm(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -17,12 +18,12 @@
         pengguna.view = Nothing
         pengguna.primary_key = "id_pengguna"
         pengguna.primary_key_caption = pengguna.primary_key
-        pengguna.viewData = New List(Of SqlHelper.SqlView) From {
-            New SqlHelper.SqlView("id_pengguna", "id_pengguna"),
-            New SqlHelper.SqlView("username", "Username"),
-            New SqlHelper.SqlView("password", "Password"),
-            New SqlHelper.SqlView("nm_lengkap", "Nama Lengkap"),
-            New SqlHelper.SqlView("tipe", "Tipe Pengguna")
+        pengguna.viewData = New List(Of SqlView) From {
+            New SqlView("id_pengguna", "id_pengguna"),
+            New SqlView("username", "Username"),
+            New SqlView("password", "Password"),
+            New SqlView("nm_lengkap", "Nama Lengkap"),
+            New SqlView("tipe", "Tipe Pengguna")
             }
         DGpengguna.DataSource = FetchData(pengguna.SelectMultiple())
         DGpengguna.Columns(pengguna.primary_key_caption).Visible = False
@@ -39,9 +40,9 @@
     Private Sub EditData(ByVal sender As Object, ByVal e As EventArgs) Handles Bedit.Click
         If FormValidation() = True Then
             SetFormData()
-        RunQuery(pengguna.Update(DGpengguna.Rows(current_id).Cells(0).Value.ToString()))
-        Call editMessage()
-        Bcancel.PerformClick()
+            RunQuery(pengguna.Update(DGpengguna.Rows(current_id).Cells(0).Value.ToString()))
+            Call editMessage()
+            Bcancel.PerformClick()
             DGpengguna.DataSource = FetchData(pengguna.SelectMultiple())
         End If
     End Sub
@@ -55,9 +56,9 @@
     Private Sub SaveData(ByVal sender As Object, ByVal e As EventArgs) Handles Bsave.Click
         If FormValidation() = True Then
             SetFormData()
-        RunQuery(pengguna.Insert())
-        Call successMessage()
-        DGpengguna.DataSource = FetchData(pengguna.SelectMultiple())
+            RunQuery(pengguna.Insert())
+            Call successMessage()
+            DGpengguna.DataSource = FetchData(pengguna.SelectMultiple())
             Bcancel.PerformClick()
         End If
     End Sub

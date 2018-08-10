@@ -1,9 +1,9 @@
-﻿Imports System.Text.RegularExpressions
+﻿Imports SqlHelper
 Public Class Fpengiriman
-    Dim agen As New SqlHelper.DataQuery
-    Dim supir As New SqlHelper.DataQuery
-    Dim truk As New SqlHelper.DataQuery
-    Dim kota As New SqlHelper.DataQuery
+    Dim agen As New DataQuery
+    Dim supir As New DataQuery
+    Dim truk As New DataQuery
+    Dim kota As New DataQuery
     Private list_supir, list_agen, list_truk, list_kota As DataTable
     Private Function FormValidation()
         Return Tno_do.TextLength <> 0 And Ckota.Text.Length <> 0 And Ctruk.Text.Length <> 0 And Csupir.Text.Length <> 0 And Cagen.Text.Length <> 0
@@ -13,10 +13,10 @@ Public Class Fpengiriman
         supir.table = "tbl_supir"
         truk.table = "tbl_truk"
         kota.table = "tbl_kota"
-        list_supir = FetchData(SqlHelper.Query.SelectAll("tbl_supir"))
-        list_agen = FetchData(SqlHelper.Query.SelectAll("tbl_agen_truk"))
-        list_truk = FetchData(SqlHelper.Query.SelectAll("daftar_truk"))
-        list_kota = FetchData(SqlHelper.Query.SelectAll("tbl_kota"))
+        list_supir = FetchData(Query.SelectAll("tbl_supir"))
+        list_agen = FetchData(Query.SelectAll("tbl_agen_truk"))
+        list_truk = FetchData(Query.SelectAll("daftar_truk"))
+        list_kota = FetchData(Query.SelectAll("tbl_kota"))
         With Ctruk
             .DataSource = list_truk
             .ValueMember = "id_truk"
@@ -40,42 +40,42 @@ Public Class Fpengiriman
         ResetForm()
     End Sub
     Private Sub SetPengirimanValue()
-        Fpengiriman_daftar.pengiriman.formData = New List(Of SqlHelper.SqlManipulation) From {
-            New SqlHelper.SqlManipulation("nomor_do", SqlHelper.Query.SqlString(Tno_do.Text)),
-            New SqlHelper.SqlManipulation("tgl_berangkat", SqlHelper.Query.SqlString(Ttgl_berangkat.Value.ToString("yyyy-MM-dd"))),
-            New SqlHelper.SqlManipulation("tgl_sampai", SqlHelper.Query.SqlString(Ttgl_sampai.Value.ToString("yyyy-MM-dd"))),
-            New SqlHelper.SqlManipulation("id_supir", Csupir.SelectedValue),
-            New SqlHelper.SqlManipulation("id_truk", Ctruk.SelectedValue),
-            New SqlHelper.SqlManipulation("id_kota", Ckota.SelectedValue),
-            New SqlHelper.SqlManipulation("tarif_ptsp", Ttarif.Value),
-            New SqlHelper.SqlManipulation("vol_ton", Tton.Value),
-            New SqlHelper.SqlManipulation("vol_sak", Tsak.Value),
-            New SqlHelper.SqlManipulation("tarif_truk", Tbiaya_truk.Value),
-            New SqlHelper.SqlManipulation("sisa_uang_jalan", Tsisa.Value),
-            New SqlHelper.SqlManipulation("ket", SqlHelper.Query.SqlString(Tketerangan.Text))
+        Fpengiriman_daftar.pengiriman.formData = New List(Of SqlManipulation) From {
+            New SqlManipulation("nomor_do", Query.SqlString(Tno_do.Text)),
+            New SqlManipulation("tgl_berangkat", Query.SqlString(Ttgl_berangkat.Value.ToString("yyyy-MM-dd"))),
+            New SqlManipulation("tgl_sampai", Query.SqlString(Ttgl_sampai.Value.ToString("yyyy-MM-dd"))),
+            New SqlManipulation("id_supir", Csupir.SelectedValue),
+            New SqlManipulation("id_truk", Ctruk.SelectedValue),
+            New SqlManipulation("id_kota", Ckota.SelectedValue),
+            New SqlManipulation("tarif_ptsp", Ttarif.Value),
+            New SqlManipulation("vol_ton", Tton.Value),
+            New SqlManipulation("vol_sak", Tsak.Value),
+            New SqlManipulation("tarif_truk", Tbiaya_truk.Value),
+            New SqlManipulation("sisa_uang_jalan", Tsisa.Value),
+            New SqlManipulation("ket", Query.SqlString(Tketerangan.Text))
             }
     End Sub
     Private Sub SetSupirValue()
-        supir.formData = New List(Of SqlHelper.SqlManipulation) From {
-            New SqlHelper.SqlManipulation("nm_supir", SqlHelper.Query.SqlString(Csupir.Text)),
-            New SqlHelper.SqlManipulation("no_hp", SqlHelper.Query.SqlString(Tnohp.Text))
+        supir.formData = New List(Of SqlManipulation) From {
+            New SqlManipulation("nm_supir", Query.SqlString(Csupir.Text)),
+            New SqlManipulation("no_hp", Query.SqlString(Tnohp.Text))
             }
     End Sub
     Private Sub SetTrukValue()
-        truk.formData = New List(Of SqlHelper.SqlManipulation) From {
-             New SqlHelper.SqlManipulation("nopol", SqlHelper.Query.SqlString(Ctruk.Text)),
-             New SqlHelper.SqlManipulation("id_agen", Cagen.SelectedValue)
+        truk.formData = New List(Of SqlManipulation) From {
+             New SqlManipulation("nopol", Query.SqlString(Ctruk.Text)),
+             New SqlManipulation("id_agen", Cagen.SelectedValue)
             }
     End Sub
     Private Sub SetAgenValue()
-        agen.formData = New List(Of SqlHelper.SqlManipulation) From {
-            New SqlHelper.SqlManipulation("nm_agen", SqlHelper.Query.SqlString(Cagen.Text))
+        agen.formData = New List(Of SqlManipulation) From {
+            New SqlManipulation("nm_agen", Query.SqlString(Cagen.Text))
             }
     End Sub
     Private Sub SetKotaValue()
-        kota.formData = New List(Of SqlHelper.SqlManipulation) From {
-            New SqlHelper.SqlManipulation("nm_kota", SqlHelper.Query.SqlString(Ckota.Text)),
-            New SqlHelper.SqlManipulation("tarif", Ttarif.Value)
+        kota.formData = New List(Of SqlManipulation) From {
+            New SqlManipulation("nm_kota", Query.SqlString(Ckota.Text)),
+            New SqlManipulation("tarif", Ttarif.Value)
         }
     End Sub
 
@@ -85,7 +85,7 @@ Public Class Fpengiriman
                 SetSupirValue()
                 RunQuery(supir.Insert())
                 Dim id_supir As DataTable = FetchData("SELECT LAST_INSERT_ID() AS id")
-                list_supir = FetchData(SqlHelper.Query.SelectAll("tbl_supir"))
+                list_supir = FetchData(Query.SelectAll("tbl_supir"))
                 Csupir.DataSource = list_supir
                 Csupir.SelectedValue = id_supir.Rows(0).Item("id")
             End If
@@ -93,7 +93,7 @@ Public Class Fpengiriman
                 SetAgenValue()
                 RunQuery(agen.Insert())
                 Dim id_agen As DataTable = FetchData("SELECT LAST_INSERT_ID() AS id")
-                list_agen = FetchData(SqlHelper.Query.SelectAll("tbl_agen_truk"))
+                list_agen = FetchData(Query.SelectAll("tbl_agen_truk"))
                 Cagen.DataSource = list_agen
                 Cagen.SelectedValue = id_agen.Rows(0).Item("id")
             End If
@@ -101,7 +101,7 @@ Public Class Fpengiriman
                 SetTrukValue()
                 RunQuery(truk.Insert())
                 Dim id_truk As DataTable = FetchData("SELECT LAST_INSERT_ID() AS id")
-                list_truk = FetchData(SqlHelper.Query.SelectAll("daftar_truk"))
+                list_truk = FetchData(Query.SelectAll("daftar_truk"))
                 Ctruk.DataSource = list_truk
                 Ctruk.SelectedValue = id_truk.Rows(0).Item("id")
             End If
@@ -109,7 +109,7 @@ Public Class Fpengiriman
                 SetKotaValue()
                 RunQuery(kota.Insert())
                 Dim id_kota As DataTable = FetchData("SELECT LAST_INSERT_ID() AS id")
-                list_kota = FetchData(SqlHelper.Query.SelectAll("tbl_kota"))
+                list_kota = FetchData(Query.SelectAll("tbl_kota"))
                 Ckota.DataSource = list_kota
                 Ckota.SelectedValue = id_kota.Rows(0).Item("id")
             End If
@@ -197,7 +197,7 @@ Public Class Fpengiriman
 
     Private Sub Tno_do_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Tno_do.KeyUp
         If e.KeyData = Keys.Enter Then
-            Dim data As DataTable = FetchData(SqlHelper.Query.SelectAll("tbl_pengiriman", "nomor_do", "=", SqlHelper.Query.SqlString(Tno_do.Text)))
+            Dim data As DataTable = FetchData(Query.SelectAll("tbl_pengiriman", "nomor_do", "=", Query.SqlString(Tno_do.Text)))
             If data.Rows.Count > 0 Then
                 MessageBox.Show("Nomor DO " & Tno_do.Text & " sudah ada!")
                 Tno_do.Clear()

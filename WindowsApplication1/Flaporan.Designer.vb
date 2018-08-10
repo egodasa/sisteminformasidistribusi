@@ -163,7 +163,7 @@ Partial Class Flaporan
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(7, 19)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(67, 15)
+        Me.Label7.Size = New System.Drawing.Size(66, 15)
         Me.Label7.TabIndex = 21
         Me.Label7.Text = "Pilih Tahun"
         '

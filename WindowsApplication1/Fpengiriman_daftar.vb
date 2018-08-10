@@ -1,6 +1,7 @@
-﻿Public Class Fpengiriman_daftar
+﻿Imports SqlHelper
+Public Class Fpengiriman_daftar
     Public current_id As Integer
-    Public pengiriman As New SqlHelper.DataQuery
+    Public pengiriman As New DataQuery
     Private Sub Badd_Click(sender As Object, e As EventArgs) Handles Badd.Click
         Fpengiriman.ShowDialog()
     End Sub
@@ -9,29 +10,29 @@
         pengiriman.view = "daftar_pengiriman"
         pengiriman.primary_key = "no_do"
         pengiriman.primary_key_caption = "Nomor DO"
-        pengiriman.viewData = New List(Of SqlHelper.SqlView) From {
-            New SqlHelper.SqlView("tgl_berangkat", "Tanggal Berangkat"),
-            New SqlHelper.SqlView("nomor_do", "Nomor DO"),
-            New SqlHelper.SqlView("nm_supir", "Nama Supir"),
-            New SqlHelper.SqlView("no_hp", "No. Hp"),
-            New SqlHelper.SqlView("nopol", "Plat Nomor"),
-            New SqlHelper.SqlView("nm_kota", "Nama Kota"),
-            New SqlHelper.SqlView("vol_ton", "Volume (Ton)"),
-            New SqlHelper.SqlView("vol_sak", "Volume (Sak)"),
-            New SqlHelper.SqlView("tarif", "Harga Satuan (PTSP)"),
-            New SqlHelper.SqlView("tarif_truk", "Harga Satuan (Truk)"),
-            New SqlHelper.SqlView("harga_ptsp", "Harga PTSP"),
-            New SqlHelper.SqlView("uang_jalan", "Uang Jalan"),
-            New SqlHelper.SqlView("sisa_uang_jalan", "Sisa Uang Jalan"),
-            New SqlHelper.SqlView("total_ongkos_jalan", "Total Ongkos"),
-            New SqlHelper.SqlView("jumlah_margin", "Jumlah Margin"),
-            New SqlHelper.SqlView("tgl_sampai", "Tanggal Sampai"),
-            New SqlHelper.SqlView("ket", "Keterangan"),
-            New SqlHelper.SqlView("nm_agen", "Nama Agen"),
-            New SqlHelper.SqlView("id_agen", "id_agen"),
-            New SqlHelper.SqlView("id_supir", "id_supir"),
-            New SqlHelper.SqlView("id_kota", "id_kota"),
-            New SqlHelper.SqlView("id_truk", "id_truk")
+        pengiriman.viewData = New List(Of SqlView) From {
+            New SqlView("tgl_berangkat", "Tanggal Berangkat"),
+            New SqlView("nomor_do", "Nomor DO"),
+            New SqlView("nm_supir", "Nama Supir"),
+            New SqlView("no_hp", "No. Hp"),
+            New SqlView("nopol", "Plat Nomor"),
+            New SqlView("nm_kota", "Nama Kota"),
+            New SqlView("vol_ton", "Volume (Ton)"),
+            New SqlView("vol_sak", "Volume (Sak)"),
+            New SqlView("tarif", "Harga Satuan (PTSP)"),
+            New SqlView("tarif_truk", "Harga Satuan (Truk)"),
+            New SqlView("harga_ptsp", "Harga PTSP"),
+            New SqlView("uang_jalan", "Uang Jalan"),
+            New SqlView("sisa_uang_jalan", "Sisa Uang Jalan"),
+            New SqlView("total_ongkos_jalan", "Total Ongkos"),
+            New SqlView("jumlah_margin", "Jumlah Margin"),
+            New SqlView("tgl_sampai", "Tanggal Sampai"),
+            New SqlView("ket", "Keterangan"),
+            New SqlView("nm_agen", "Nama Agen"),
+            New SqlView("id_agen", "id_agen"),
+            New SqlView("id_supir", "id_supir"),
+            New SqlView("id_kota", "id_kota"),
+            New SqlView("id_truk", "id_truk")
             }
         DGpengiriman.DataSource = FetchData(pengiriman.SelectMultiple())
         DGpengiriman.Columns("id_agen").Visible = False

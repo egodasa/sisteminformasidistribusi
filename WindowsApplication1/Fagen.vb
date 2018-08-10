@@ -1,14 +1,15 @@
-﻿Public Class Fagen
-    Dim agen As New SqlHelper.DataQuery
+﻿Imports SqlHelper
+Public Class Fagen
+    Dim agen As New DataQuery
     Dim current_id As Integer
     Private Function FormValidation()
         Return Tnm_agen.TextLength > 0
     End Function
     Private Sub SetFormData()
-        agen.formData = New List(Of SqlHelper.SqlManipulation) From {
-            New SqlHelper.SqlManipulation("nm_agen", SqlHelper.Query.SqlString(Tnm_agen.Text)),
-            New SqlHelper.SqlManipulation("no_telpon", SqlHelper.Query.SqlString(Ttelp.Text)),
-            New SqlHelper.SqlManipulation("alamat", SqlHelper.Query.SqlString(Talamat.Text))
+        agen.formData = New List(Of SqlManipulation) From {
+            New SqlManipulation("nm_agen", Query.SqlString(Tnm_agen.Text)),
+            New SqlManipulation("no_telpon", Query.SqlString(Ttelp.Text)),
+            New SqlManipulation("alamat", Query.SqlString(Talamat.Text))
             }
     End Sub
     Private Sub LoadForm(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -17,11 +18,11 @@
         agen.view = Nothing
         agen.primary_key = "id_agen"
         agen.primary_key_caption = "id_agen"
-        agen.viewData = New List(Of SqlHelper.SqlView) From {
-            New SqlHelper.SqlView("id_agen", "id_agen"),
-            New SqlHelper.SqlView("nm_agen", "Nama Agen"),
-            New SqlHelper.SqlView("no_telpon", "Nomor Telpon"),
-            New SqlHelper.SqlView("alamat", "Alamat")
+        agen.viewData = New List(Of SqlView) From {
+            New SqlView("id_agen", "id_agen"),
+            New SqlView("nm_agen", "Nama Agen"),
+            New SqlView("no_telpon", "Nomor Telpon"),
+            New SqlView("alamat", "Alamat")
             }
         DGpemasok.DataSource = FetchData(agen.SelectMultiple())
         DGpemasok.Columns(agen.primary_key_caption).Visible = False

@@ -31,4 +31,7 @@
         Flaporan_CR.ShowDialog()
     End Sub
 
+    Private Sub Flaporan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
