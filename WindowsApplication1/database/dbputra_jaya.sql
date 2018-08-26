@@ -30,7 +30,7 @@ CREATE TABLE `tbl_pengguna` (
 
 INSERT INTO `tbl_pengguna` (`id_pengguna`, `username`, `password`, `nm_lengkap`, `tipe`) VALUES
 (1,	'admin',	'21232f297a57a5a743894a0e4a801fc3',	'Admin',	'Admin'),
-(2,	'pimpinan',	'58399557dae3c60e23c78606771dfa3d',	'Pimpinan',	'Pimpinan'),
+(2,	'pimpinan',	'90973652b88fe07d05a4304f0a945de8',	'Pimpinan',	'Pimpinan'),
 (3,	'karyawan',	'9e014682c94e0f2cc834bf7348bda428',	'Karyawan',	'Karyawan');
 
 DROP TABLE IF EXISTS `tbl_pengiriman`;
