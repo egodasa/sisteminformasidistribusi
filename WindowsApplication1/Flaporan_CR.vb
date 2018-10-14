@@ -18,7 +18,7 @@ Public Class Flaporan_CR
         ElseIf tipe_laporan = "custom" Then
             CR.Load("laporan/Pengiriman.rpt")
             CR.SetParameterValue("judul", "Per Tanggal " & Flaporan.Tawal.Value.ToString("dd MMMM yyyy") & " - " & Flaporan.Takhir.Value.ToString("dd MMMM yyyy"))
-            CRlaporan.SelectionFormula = "{daftar_pengiriman1.tgl_berangkat} = Date(" & Flaporan.Tawal.Value.ToString("yyyy,M,d") & ") to Date (" & Flaporan.Takhir.Value.ToString("yyyy,M,d") & ")"
+            CRlaporan.SelectionFormula = "{daftar_pengiriman1.tgl_berangkat} in Date(" & Flaporan.Tawal.Value.ToString("yyyy,M,d") & ") to Date (" & Flaporan.Takhir.Value.ToString("yyyy,M,d") & ")"
         End If
         CRlaporan.ReportSource = CR
     End Sub
