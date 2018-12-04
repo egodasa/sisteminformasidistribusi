@@ -37,6 +37,7 @@ Partial Class Flogin
         Me.OK = New System.Windows.Forms.Button()
         Me.Cancel = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'UsernameLabel
@@ -105,6 +106,18 @@ Partial Class Flogin
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Login Pengguna"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label3.Location = New System.Drawing.Point(25, 192)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(192, 19)
+        Me.Label3.TabIndex = 16
+        Me.Label3.Text = "Created By Ilham Maulana"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'Flogin
         '
         Me.AcceptButton = Me.OK
@@ -112,7 +125,8 @@ Partial Class Flogin
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Wheat
         Me.CancelButton = Me.Cancel
-        Me.ClientSize = New System.Drawing.Size(243, 203)
+        Me.ClientSize = New System.Drawing.Size(243, 215)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Cancel)
         Me.Controls.Add(Me.OK)
@@ -134,4 +148,5 @@ Partial Class Flogin
     End Sub
 
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class
