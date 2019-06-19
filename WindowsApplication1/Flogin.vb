@@ -38,4 +38,8 @@ Public Class Flogin
     Private Sub Flogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private Sub Label2_Click(sender As System.Object, e As System.EventArgs) Handles Label2.Click
+
+    End Sub
 End Class

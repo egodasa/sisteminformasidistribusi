@@ -124,6 +124,12 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fdistributor.Designer.vb">
+      <DependentUpon>Fdistributor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fdistributor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Fpengiriman_daftar.Designer.vb">
       <DependentUpon>Fpengiriman_daftar.vb</DependentUpon>
     </Compile>
@@ -240,6 +246,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Fdistributor.resx">
+      <DependentUpon>Fdistributor.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fpengiriman_daftar.resx">
       <DependentUpon>Fpengiriman_daftar.vb</DependentUpon>
     </EmbeddedResource>

@@ -8,7 +8,7 @@ Public Class Fpengiriman_daftar
     Private Sub Fdaftar_pengiriman_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         pengiriman.table = "tbl_pengiriman"
         pengiriman.view = "daftar_pengiriman"
-        pengiriman.primary_key = "no_do"
+        pengiriman.primary_key = "nomor_do"
         pengiriman.primary_key_caption = "Nomor DO"
         pengiriman.viewData = New List(Of SqlView) From {
             New SqlView("tgl_berangkat", "Tanggal Berangkat"),
@@ -43,7 +43,7 @@ Public Class Fpengiriman_daftar
     End Sub
     Private Sub DeletePengiriman(ByVal x As Integer)
         If MessageBox.Show("Apakah yakin data ini dihapus?", "Peringatan", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) = DialogResult.Yes Then
-            RunQuery(pengiriman.Delete(DGpengiriman.Rows(x).Cells(pengiriman.primary_key).Value.ToString))
+            RunQuery(pengiriman.Delete(DGpengiriman.Rows(x).Cells("Nomor DO").Value.ToString))
             DGpengiriman.DataSource = FetchData(pengiriman.SelectMultiple())
         End If
     End Sub

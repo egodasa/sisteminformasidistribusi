@@ -33,6 +33,9 @@ Partial Class Fmenu
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Button9 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Button1
@@ -122,7 +125,7 @@ Partial Class Fmenu
         Me.Button6.Font = New System.Drawing.Font("Segoe UI", 17.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button6.Image = CType(resources.GetObject("Button6.Image"), System.Drawing.Image)
         Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button6.Location = New System.Drawing.Point(267, 305)
+        Me.Button6.Location = New System.Drawing.Point(267, 366)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(201, 55)
         Me.Button6.TabIndex = 10
@@ -183,16 +186,55 @@ Partial Class Fmenu
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(386, 57)
         Me.Label2.TabIndex = 14
-        Me.Label2.Text = "Jln. Raya Indarung Padang Besi No. 04, Kec. Lubuk Kilangan" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Padang, Sumatera Bara" &
-    "t" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "HP. 081278004888 e-mail : ptsastrajaya@gmail.com"
+        Me.Label2.Text = "Jln. Raya Indarung Padang Besi No. 04, Kec. Lubuk Kilangan" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Padang, Sumatera Bara" & _
+            "t" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "HP. 081278004888 e-mail : ptsastrajaya@gmail.com"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(57, 402)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(119, 15)
+        Me.Label3.TabIndex = 16
+        Me.Label3.Text = "14101152610572"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(57, 375)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(129, 16)
+        Me.Label4.TabIndex = 15
+        Me.Label4.Text = "ILHAM MUALANA"
+        '
+        'Button9
+        '
+        Me.Button9.BackColor = System.Drawing.Color.Cornsilk
+        Me.Button9.FlatAppearance.BorderSize = 0
+        Me.Button9.Font = New System.Drawing.Font("Segoe UI", 17.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button9.Image = CType(resources.GetObject("Button9.Image"), System.Drawing.Image)
+        Me.Button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button9.Location = New System.Drawing.Point(267, 304)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(201, 56)
+        Me.Button9.TabIndex = 17
+        Me.Button9.Text = "Distributor"
+        Me.Button9.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button9.UseVisualStyleBackColor = False
         '
         'Fmenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Wheat
-        Me.ClientSize = New System.Drawing.Size(523, 368)
+        Me.ClientSize = New System.Drawing.Size(513, 434)
+        Me.Controls.Add(Me.Button9)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.Button7)
@@ -222,4 +264,7 @@ Partial Class Fmenu
     Friend WithEvents Button7 As System.Windows.Forms.Button
     Friend WithEvents Button8 As Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Button9 As System.Windows.Forms.Button
 End Class

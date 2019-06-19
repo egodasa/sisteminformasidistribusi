@@ -30,7 +30,6 @@ Partial Class Fpengiriman_daftar
         Me.Badd = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.MenuAksi = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.Medit = New System.Windows.Forms.ToolStripMenuItem()
         Me.Mhapus = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.DGpengiriman, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,8 +59,8 @@ Partial Class Fpengiriman_daftar
         Me.DGpengiriman.AllowUserToAddRows = False
         Me.DGpengiriman.AllowUserToDeleteRows = False
         Me.DGpengiriman.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DGpengiriman.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGpengiriman.Location = New System.Drawing.Point(12, 76)
         Me.DGpengiriman.Name = "DGpengiriman"
@@ -95,22 +94,15 @@ Partial Class Fpengiriman_daftar
         '
         'MenuAksi
         '
-        Me.MenuAksi.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Medit, Me.Mhapus})
+        Me.MenuAksi.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Mhapus})
         Me.MenuAksi.Name = "MenuAksi"
-        Me.MenuAksi.Size = New System.Drawing.Size(109, 48)
-        '
-        'Medit
-        '
-        Me.Medit.Image = CType(resources.GetObject("Medit.Image"), System.Drawing.Image)
-        Me.Medit.Name = "Medit"
-        Me.Medit.Size = New System.Drawing.Size(108, 22)
-        Me.Medit.Text = "Edit"
+        Me.MenuAksi.Size = New System.Drawing.Size(153, 48)
         '
         'Mhapus
         '
         Me.Mhapus.Image = CType(resources.GetObject("Mhapus.Image"), System.Drawing.Image)
         Me.Mhapus.Name = "Mhapus"
-        Me.Mhapus.Size = New System.Drawing.Size(108, 22)
+        Me.Mhapus.Size = New System.Drawing.Size(152, 22)
         Me.Mhapus.Text = "Hapus"
         '
         'Button1
@@ -156,7 +148,6 @@ Partial Class Fpengiriman_daftar
     Friend WithEvents Badd As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents MenuAksi As ContextMenuStrip
-    Friend WithEvents Medit As ToolStripMenuItem
     Friend WithEvents Mhapus As ToolStripMenuItem
     Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

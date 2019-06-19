@@ -274,6 +274,28 @@
         RK5CYII=
 </value>
   </data>
+  <data name="Button9.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wQAADsEBuJFr7QAAA79JREFUaEPtmN9LFFEUx7eCoqdeivC5VOghDR8yyf0paLpru6sbEUjof1BUIEg+
+        +FYPlVkaBkmhgQWh7Y5SkUlaoCBokFSEZdmPB03JH0HuvZ0znpXZ8azubjq7xX7hw1zmnvu93zMzdwVN
+        KaWUUkr/j3Jzc7fb7fbjwH1g1GazzcJVhnA4HFYqTT5ZrdYyCPxRG1gPzPdQeXIJwtXpw0YCmngD1wv5
+        +flptDyxgkDV+pBR8hPWeskmMYLP5iAE+a0LFjXQwCKciwKyM174TXPBYgE8xn0+31ayNE4WiyWbC8RR
+        6SuQLTWFcuxOiXrVz+MPANkaJ9j4vD6IFm1o2eUKQ98EvIVbZGucuM9ntdB6dE0Mkq1xggbU3/xYQuvR
+        NDFGtsYJNp3HzblgsYAe8DDmyNY40ZNjQ8VCyIdsjdM/3YBoSy85V3FoYb0aqD6ZNy9a04vJfuMl7mZ8
+        CrZlyvozhWFhGivTVbT3tHDzDWcLJXqJtoxxst94YQPybkZYEKQJwiH6+yEizoOXsQ3A68YmhFIiVoSJ
+        EfTA8KI1s5DsjZNQXKNcqFgQXa7XZGe8oIFmLlQsiC7nDbIzXrKrtIALFQsi4LKTXWIET7CXCxYNQnE+
+        JZvESXS79krFOc0FXA34/CZxLdkkVsJfaobDOMUF5VDDwxpanhwSj0rS5YM8NnAYUCMU9x5allySTSYp
+        W3ZKeW+/lJ02KZVi4AiMrUv3cA5qqDz5pDYQBVSefOLCclB5csjm9ueYPf6rwLuRl/0T8kOnlIO18L07
+        pbydtgSO8R7MYQ3Wmt2BenOZcoBsjJfFo+Sa3f4+iycgQ1Sd6u2TGn1vbFTRCmu0a6CZ5/gQyHbjVVSk
+        bIPgzRaPX2iDqLgD81M/fk1iUAz+KitLJdQEzmENsy4IXNvna9/Y/w/ZXR27YcMXKwJouHh9+FmkBnCO
+        WxMC38bhcmUXbbe+QmP8drmNtTjKlfHFYDC4OD293ACO8R7OcWvC8Y8U+B7voG3XS3ITHLpufsOVdPd8
+        HpgbHl5uAMd4j6vlgAf1kDZeH1m8/gpuo0iUVT0ZmOroWG4Ax3iPq42E2Rs4Qdv/nXy+9i1wwN5zm0QE
+        DuVQ3eWZUAM4Vg8qVxsJd+CtqbZ2M8WIX9ajioPdYA1qjjVMhBrAMVezFmav30Yx4hc8iSuc+VrYPZ0z
+        Q9k5EsExV7MWcO4uUYz4BUb9euNouek8PYtwc9GAfygpRvwyewLfOPNo8Ja1f0G4uWiAN/CVYsQveAoL
+        nLkR4N4UI6Uklcn0BypuyMkAULmqAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAMAEBAAAAEAIABoBAAANgAAACAgAAABACAAqBAAAJ4EAABAQAAAAQAgAChCAABGFQAAKAAAABAA

@@ -44,4 +44,9 @@
         Flaporan.Show()
         main_form.Hide()
     End Sub
+
+    Private Sub Button9_Click(sender As System.Object, e As System.EventArgs) Handles Button9.Click
+        Fdistributor.Show()
+        Me.Hide()
+    End Sub
 End Class
