@@ -27,6 +27,10 @@ Partial Class Fpengiriman
         Me.Bcancel = New System.Windows.Forms.Button()
         Me.Bexit = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Tgudang = New System.Windows.Forms.TextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Cdistributor = New System.Windows.Forms.ComboBox()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.Ckota = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Tno_do = New System.Windows.Forms.TextBox()
@@ -72,10 +76,6 @@ Partial Class Fpengiriman
         Me.MenuAksi = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Mhapus = New System.Windows.Forms.ToolStripMenuItem()
         Me.BWsimpan = New System.ComponentModel.BackgroundWorker()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Cdistributor = New System.Windows.Forms.ComboBox()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Tgudang = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
         CType(Me.Tuang_jalan, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -154,6 +154,43 @@ Partial Class Fpengiriman
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Data Pengiriman Semen"
+        '
+        'Tgudang
+        '
+        Me.Tgudang.Location = New System.Drawing.Point(982, 41)
+        Me.Tgudang.Name = "Tgudang"
+        Me.Tgudang.Size = New System.Drawing.Size(143, 23)
+        Me.Tgudang.TabIndex = 52
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(979, 23)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(88, 15)
+        Me.Label20.TabIndex = 51
+        Me.Label20.Text = "Gudang Tujuan"
+        '
+        'Cdistributor
+        '
+        Me.Cdistributor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+        Me.Cdistributor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.Cdistributor.FormattingEnabled = True
+        Me.Cdistributor.Location = New System.Drawing.Point(823, 41)
+        Me.Cdistributor.Name = "Cdistributor"
+        Me.Cdistributor.Size = New System.Drawing.Size(139, 23)
+        Me.Cdistributor.TabIndex = 50
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(820, 23)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(99, 15)
+        Me.Label19.TabIndex = 49
+        Me.Label19.Text = "Nama Distributor"
         '
         'Ckota
         '
@@ -599,41 +636,6 @@ Partial Class Fpengiriman
         Me.Mhapus.Name = "Mhapus"
         Me.Mhapus.Size = New System.Drawing.Size(108, 22)
         Me.Mhapus.Text = "Hapus"
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(820, 23)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(99, 15)
-        Me.Label19.TabIndex = 49
-        Me.Label19.Text = "Nama Distributor"
-        '
-        'Cdistributor
-        '
-        Me.Cdistributor.FormattingEnabled = True
-        Me.Cdistributor.Location = New System.Drawing.Point(823, 41)
-        Me.Cdistributor.Name = "Cdistributor"
-        Me.Cdistributor.Size = New System.Drawing.Size(139, 23)
-        Me.Cdistributor.TabIndex = 50
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(979, 23)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(88, 15)
-        Me.Label20.TabIndex = 51
-        Me.Label20.Text = "Gudang Tujuan"
-        '
-        'Tgudang
-        '
-        Me.Tgudang.Location = New System.Drawing.Point(982, 41)
-        Me.Tgudang.Name = "Tgudang"
-        Me.Tgudang.Size = New System.Drawing.Size(143, 23)
-        Me.Tgudang.TabIndex = 52
         '
         'Fpengiriman
         '

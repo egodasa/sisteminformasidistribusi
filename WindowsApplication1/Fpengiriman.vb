@@ -15,7 +15,7 @@ Public Class Fpengiriman
         supir.table = "tbl_supir"
         truk.table = "tbl_truk"
         kota.table = "tbl_kota"
-        list_distributor.TableName = FetchData(Query.SelectAll("tbl_distributor"))
+        list_distributor = FetchData(Query.SelectAll("tbl_distributor"))
         list_supir = FetchData(Query.SelectAll("tbl_supir"))
         list_agen = FetchData(Query.SelectAll("tbl_agen_truk"))
         list_truk = FetchData(Query.SelectAll("daftar_truk"))
@@ -137,7 +137,6 @@ Public Class Fpengiriman
                 Ckota.SelectedValue = id_kota.Rows(0).Item("id")
             End If
             SetPengirimanValue()
-
             RunQuery(Fpengiriman_daftar.pengiriman.Insert())
             Fpengiriman_daftar.DGpengiriman.DataSource = FetchData(Fpengiriman_daftar.pengiriman.SelectMultiple())
             Call successMessage()
@@ -240,6 +239,18 @@ Public Class Fpengiriman
     End Sub
 
     Private Sub Ckota_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Ckota.KeyUp
+        If e.KeyData = Keys.Enter Then
+            Cdistributor.Focus()
+        End If
+    End Sub
+
+    Private Sub Cdistributor_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Cdistributor.KeyUp
+        If e.KeyData = Keys.Enter Then
+            Tgudang.Focus()
+        End If
+    End Sub
+
+    Private Sub Tgudang_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Tgudang.KeyUp
         If e.KeyData = Keys.Enter Then
             Ctruk.Focus()
         End If
